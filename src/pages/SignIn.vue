@@ -1,4 +1,5 @@
 <!-- filepath: c:\Users\Hitesh\3D Objects\newly\my-app\src\components\SignIn.vue -->
+<!-- SignIn.vue -->
 <template>
   <div class="signin-container">
     <el-card class="signin-card" shadow="hover">
@@ -22,17 +23,30 @@
             />
           </el-form-item>
           <el-form-item>
-            <el-button type="primary" @click="onSubmit" style="width: 100%"
-              >Sign In</el-button
+            <el-button
+              type="primary"
+              @click="onSubmit"
+              :loading="loading"
+              style="width: 100%"
             >
+              Sign In
+            </el-button>
           </el-form-item>
         </el-form>
+
         <div class="signin-content">
           <el-divider />
           <p>
             Welcome back! Please sign in to access your account and explore new
             features.
           </p>
+        </div>
+
+        <div
+          v-if="errorMessage"
+          style="color: red; text-align: center; margin-top: 10px"
+        >
+          {{ errorMessage }}
         </div>
       </section>
     </el-card>
@@ -47,6 +61,8 @@ const form = reactive({
   email: "",
   password: "",
 });
+const loading = ref(false);
+const errorMessage = ref("");
 
 const rules = {
   email: [
@@ -68,11 +84,14 @@ const rules = {
 };
 
 async function onSubmit() {
+  errorMessage.value = "";
+  loading.value = true;
+
   formRef.value.validate(async (valid) => {
     if (valid) {
       try {
         const response = await fetch(
-          "http://localhost/my-app-backend/login.php",
+          "http://localhost/my-app-backend/test.php",
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -82,15 +101,22 @@ async function onSubmit() {
             }),
           }
         );
+
+        if (!response.ok) throw new Error("HTTP error " + response.status);
+
         const data = await response.json();
         if (data.success) {
           alert("Sign in successful!");
         } else {
-          alert(data.message || "Sign in failed!");
+          errorMessage.value = data.message || "Sign in failed!";
         }
       } catch (error) {
-        alert("Error connecting to server.");
+        errorMessage.value = "Error connecting to server.";
+      } finally {
+        loading.value = false;
       }
+    } else {
+      loading.value = false;
     }
   });
 }
