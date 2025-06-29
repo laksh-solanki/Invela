@@ -57,12 +57,22 @@
               Contact
             </a>
             <ul class="dropdown-menu">
-              <li><router-link
+              <li>
+                <router-link
                   to="/signin"
                   exact-active-class="active-link"
                   class="dropdown-item"
                   >signIn</router-link
-                ></li>
+                >
+              </li>
+              <li>
+                <router-link
+                  to="/Login"
+                  exact-active-class="active-link"
+                  class="dropdown-item"
+                  >Login</router-link
+                >
+              </li>
               <li>
                 <router-link
                   to="/contact"
@@ -87,6 +97,6 @@
 .ff {
   font-weight: bolder;
   font-size: x-large;
-  letter-spacing: 0.20em;
+  letter-spacing: 0.2em;
 }
 </style>
