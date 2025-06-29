@@ -1,50 +1,53 @@
 <template>
-  <div class="contact-page">
-    <h1 class="contact-title">Contact Us</h1>
-    <div class="contact-content">
-      <div class="contact-info">
-        <h2>Get in Touch</h2>
-        <p>
-          We'd love to hear from you! Fill out the form or reach us directly at:
-        </p>
-        <ul>
-          <li><i class="fas fa-envelope"></i> hello@example.com</li>
-          <li><i class="fas fa-phone"></i> +1 234 567 8901</li>
-          <li>
-            <i class="fas fa-map-marker-alt"></i> 123 Main St, City, Country
-          </li>
-        </ul>
+  <div class="Contact">
+    <div class="contact-page">
+      <h1 class="contact-title">Contact Us</h1>
+      <div class="contact-content">
+        <div class="contact-info">
+          <h2>Get in Touch</h2>
+          <p>
+            We'd love to hear from you! Fill out the form or reach us directly
+            at:
+          </p>
+          <ul>
+            <li><i class="fas fa-envelope"></i> hello@example.com</li>
+            <li><i class="fas fa-phone"></i> +1 234 567 8901</li>
+            <li>
+              <i class="fas fa-map-marker-alt"></i> 123 Main St, City, Country
+            </li>
+          </ul>
+        </div>
+        <form class="contact-form" @submit.prevent="submitContact">
+          <input
+            v-model="contact.name"
+            type="text"
+            placeholder="Your Name"
+            required
+          />
+          <input
+            v-model="contact.email"
+            type="email"
+            placeholder="Your Email"
+            required
+          />
+          <textarea
+            v-model="contact.message"
+            placeholder="Your Message"
+            required
+          ></textarea>
+          <button class="btn btn-primary" type="submit">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+        </form>
       </div>
-      <form class="contact-form" @submit.prevent="submitContact">
-        <input
-          v-model="contact.name"
-          type="text"
-          placeholder="Your Name"
-          required
-        />
-        <input
-          v-model="contact.email"
-          type="email"
-          placeholder="Your Email"
-          required
-        />
-        <textarea
-          v-model="contact.message"
-          placeholder="Your Message"
-          required
-        ></textarea>
-        <button class="btn btn-primary" type="submit">
-          <i class="fas fa-paper-plane"></i> Send Message
-        </button>
-      </form>
-    </div>
-    <!-- Bootstrap Alert at Bottom Right -->
-    <div
-      v-if="showAlert"
-      :class="['alert', 'alert-success', 'contact-alert', alertAnimation]"
-      role="alert"
-    >
-      Thank you! We'll get back to you soon.
+      <!-- Bootstrap Alert at Bottom Right -->
+      <div
+        v-if="showAlert"
+        :class="['alert', 'alert-success', 'contact-alert', alertAnimation]"
+        role="alert"
+      >
+        Thank you! We'll get back to you soon.
+      </div>
     </div>
   </div>
 </template>

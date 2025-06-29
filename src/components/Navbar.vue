@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg bg-">
+  <nav class="navbar navbar-expand-lg bg-body shadow-sm fixed-top hight">
     <div class="container-fluid">
       <router-link
         to="/"
@@ -62,7 +62,7 @@
                   to="/signin"
                   exact-active-class="active-link"
                   class="dropdown-item"
-                  >signIn</router-link
+                  >SignIn</router-link
                 >
               </li>
               <li>
@@ -98,5 +98,9 @@
   font-weight: bolder;
   font-size: x-large;
   letter-spacing: 0.2em;
+}
+
+.hight {
+  height: 80px;
 }
 </style>

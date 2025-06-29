@@ -1,41 +1,44 @@
 <template>
-  <div class="services-page">
-    <h1 class="services-title">Our Services</h1>
-    <p class="services-subtitle">
-      We offer a wide range of solutions to help your business grow and succeed.
-    </p>
-    <div class="services-grid">
-      <div class="service-card">
-        <i class="fas fa-laptop-code service-icon"></i>
-        <h3>Web Development</h3>
-        <p>
-          Custom websites and web apps built with the latest technologies for
-          performance and scalability.
-        </p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-mobile-alt service-icon"></i>
-        <h3>Mobile Apps</h3>
-        <p>
-          Cross-platform mobile applications for Android and iOS to reach your
-          customers everywhere.
-        </p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-paint-brush service-icon"></i>
-        <h3>UI/UX Design</h3>
-        <p>
-          Beautiful, user-friendly interfaces and experiences that delight your
-          users and drive engagement.
-        </p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-cloud service-icon"></i>
-        <h3>Cloud Solutions</h3>
-        <p>
-          Scalable cloud infrastructure and DevOps services to keep your
-          business running smoothly.
-        </p>
+  <div class="Services">
+    <div class="services-page">
+      <h1 class="services-title">Our Services</h1>
+      <p class="services-subtitle">
+        We offer a wide range of solutions to help your business grow and
+        succeed.
+      </p>
+      <div class="services-grid">
+        <div class="service-card">
+          <i class="fas fa-laptop-code service-icon"></i>
+          <h3>Web Development</h3>
+          <p>
+            Custom websites and web apps built with the latest technologies for
+            performance and scalability.
+          </p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-mobile-alt service-icon"></i>
+          <h3>Mobile Apps</h3>
+          <p>
+            Cross-platform mobile applications for Android and iOS to reach your
+            customers everywhere.
+          </p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-paint-brush service-icon"></i>
+          <h3>UI/UX Design</h3>
+          <p>
+            Beautiful, user-friendly interfaces and experiences that delight
+            your users and drive engagement.
+          </p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-cloud service-icon"></i>
+          <h3>Cloud Solutions</h3>
+          <p>
+            Scalable cloud infrastructure and DevOps services to keep your
+            business running smoothly.
+          </p>
+        </div>
       </div>
     </div>
   </div>
