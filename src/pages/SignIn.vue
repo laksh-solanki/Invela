@@ -9,23 +9,55 @@
         </div>
         <div class="form-group">
           <label for="password">Choose Password</label>
-          <input
-            v-model="password"
-            type="password"
-            id="password"
-            required
-            minlength="6"
-          />
+          <div style="position: relative">
+            <input
+              v-model="password"
+              :type="showPassword ? 'text' : 'password'"
+              id="password"
+              required
+              minlength="6"
+            />
+            <span
+              @click="togglePassword"
+              style="
+                position: absolute;
+                right: 8px;
+                top: 50%;
+                transform: translateY(-50%);
+                cursor: pointer;
+              "
+              aria-label="Toggle password visibility"
+            >
+              <i :class="showPassword ? 'fa fa-eye-slash' : 'fa fa-eye'"></i>
+            </span>
+          </div>
         </div>
         <div class="form-group">
           <label for="confirmPassword">Confirm Password</label>
-          <input
-            v-model="confirmPassword"
-            type="password"
-            id="confirmPassword"
-            required
-            minlength="6"
-          />
+          <div style="position: relative">
+            <input
+              v-model="confirmPassword"
+              :type="showConfirmPassword ? 'text' : 'password'"
+              id="confirmPassword"
+              required
+              minlength="6"
+            />
+            <span
+              @click="toggleConfirmPassword"
+              style="
+                position: absolute;
+                right: 8px;
+                top: 50%;
+                transform: translateY(-50%);
+                cursor: pointer;
+              "
+              aria-label="Toggle confirm password visibility"
+            >
+              <i
+                :class="showConfirmPassword ? 'fa fa-eye-slash' : 'fa fa-eye'"
+              ></i>
+            </span>
+          </div>
         </div>
         <div class="form-group agreement">
           <input v-model="agreed" type="checkbox" id="agreement" required />
@@ -70,6 +102,8 @@ export default {
       password: "",
       confirmPassword: "",
       agreed: false,
+      showPassword: false,
+      showConfirmPassword: false,
       showAlert: false,
       alertSeconds: 3,
       alertTimer: null,
@@ -79,6 +113,12 @@ export default {
     };
   },
   methods: {
+    togglePassword() {
+      this.showPassword = !this.showPassword;
+    },
+    toggleConfirmPassword() {
+      this.showConfirmPassword = !this.showConfirmPassword;
+    },
     onSubmit() {
       // Validation
       if (this.password !== this.confirmPassword) {
@@ -125,7 +165,20 @@ export default {
 <style scoped>
 @import "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css";
 
-.signin{
+input[type="password"],
+input[type="text"]#password,
+input[type="text"]#confirmPassword,
+input[type="password"]#confirmPassword {
+  width: 100%;
+  padding: 8px 10px;
+  padding-right: 30px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: medium;
+  box-sizing: border-box;
+}
+
+.signin {
   height: 546px;
   display: flex;
   align-items: center;

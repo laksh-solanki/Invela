@@ -1,6 +1,6 @@
 <template>
   <Navbar />
-  <router-view class="mt-6"/>
+  <router-view class="main"/>
   <Footer />
 </template>
 
@@ -10,7 +10,8 @@ import Footer from "./components/Footer.vue";
 </script>
 
 <style scoped>
-.mt-6{
-  margin-top: 5%;
+.main{
+  width: 100%;
+  height: 100%;
 }
 </style>

@@ -75,6 +75,10 @@
 </script>
 
 <style scoped>
+.About {
+  height: auto;
+  text-align: center;
+}
 .about-hero {
   background: linear-gradient(90deg, #4361ee 60%, #4cc9f0 100%);
   color: #fff;

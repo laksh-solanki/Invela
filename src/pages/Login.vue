@@ -9,7 +9,27 @@
         </div>
         <div class="form-group">
           <label for="password">Password</label>
-          <input v-model="password" type="password" id="password" required />
+          <div style="position: relative">
+            <input
+              v-model="password"
+              :type="showPassword ? 'text' : 'password'"
+              id="password"
+              required
+            />
+            <span
+              @click="togglePassword"
+              style="
+                position: absolute;
+                right: 8px;
+                top: 50%;
+                transform: translateY(-50%);
+                cursor: pointer;
+              "
+              aria-label="Toggle password visibility"
+            >
+              <i :class="showPassword ? 'fa fa-eye-slash' : 'fa fa-eye'"></i>
+            </span>
+          </div>
         </div>
         <button type="submit">Login</button>
       </form>
@@ -46,6 +66,7 @@ export default {
     return {
       email: "",
       password: "",
+      showPassword: false,
       showAlert: false,
       alertSeconds: 3,
       alertTimer: null,
@@ -55,6 +76,9 @@ export default {
     };
   },
   methods: {
+    togglePassword() {
+      this.showPassword = !this.showPassword;
+    },
     onSubmit() {
       // Example validation
       if (!this.email || !this.password) {
@@ -123,7 +147,8 @@ label {
   font-weight: 500;
 }
 input[type="email"],
-input[type="password"] {
+input[type="password"],
+input[type="text"]#password {
   width: 100%;
   padding: 8px 10px;
   border: 1px solid #ccc;

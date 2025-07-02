@@ -50,7 +50,8 @@
 
 <style scoped>
 .services-page {
-  max-width: 1100px;
+  width: 1100px;
+  height: 514px;
   margin: 0 auto;
   padding: 2.5rem 1rem;
   text-align: center;
