@@ -1,13 +1,12 @@
 <template>
   <nav class="navbar navbar-expand-lg bg-body sticky-top shadow-none">
     <div class="container">
-      <router-link
-        to="/"
-        class="navbar-brand animate__animated animate__backInLeft ff"
-        >my-app</router-link
-      >
+      <div class="navbar-brand logo animate__animated animate__backInLeft">
+        <i class="fas fa-cube"></i>
+        <router-link to="/" class="main-logo">My-App</router-link>
+      </div>
       <button
-        class="navbar-toggler justify-content-end"
+        class="navbar-toggler"
         type="button"
         data-bs-toggle="collapse"
         data-bs-target="#navbarNavDropdown"
@@ -18,10 +17,10 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div
-        class="collapse navbar-collapse justify-content-end"
+        class="collapse navbar-collapse justify-content-end align-items-center"
         id="navbarNavDropdown"
       >
-        <ul class="navbar-nav">
+        <ul class="navbar-nav text-center align-items-center">
           <li class="nav-item">
             <router-link
               to="/"
@@ -56,41 +55,56 @@
             >
               Contact
             </a>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu text-lg-start">
               <li>
-                <router-link
-                  to="/signin"
-                  exact-active-class="active-link"
-                  class="dropdown-item"
+                <router-link to="/signin" class="dropdown-item"
                   >SignIn</router-link
                 >
               </li>
-              <li></li>
               <li>
-                <router-link
-                  to="/contact"
-                  exact-active-class="active-link"
-                  class="dropdown-item"
+                <router-link to="/contact" class="dropdown-item"
                   >Contact</router-link
                 >
               </li>
             </ul>
           </li>
+          <li class="ms-lg-5 ms-sm-0">
+            <div class="hero-buttons justify-content-center">
+              <button class="btn btn-outline">
+                <i class="fas fa-play-circle"></i
+                ><router-link to="/Login" class="dropdown-item"
+                  >Login</router-link
+                >
+              </button>
+            </div>
+          </li>
         </ul>
-      </div>
-      <div class="hero-buttons">
-        <button class="btn btn-outline">
-          <i class="fas fa-play-circle"></i
-          ><router-link to="/Login" class="dropdown-item">Login</router-link>
-        </button>
       </div>
     </div>
   </nav>
 </template>
 
 <style scoped>
+/* Change background color of toggler icon */
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='blue' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  color: 3px solid var(--primary);
+}
+
+.navbar-toggler::before {
+  border: 3px solid var(--primary);
+}
+
+.navbar-toggler-icon {
+  color: var(--primary) !important;
+}
+
 .navbar {
   animation: slideDown 0.7s ease forwards;
+}
+
+.navbar-nav {
+  font-size: 1.13rem;
 }
 
 .btn {
@@ -133,7 +147,23 @@
 
 .hero-buttons {
   display: flex;
+  width: 100%;
   gap: 20px;
+}
+
+.dropdown-menu {
+  margin-top: 5px !important;
+  border-radius: var(--radius);
+}
+
+@media only screen and (max-width: 500px) {
+  .btn {
+    padding: 10px 45px;
+  }
+
+  .dropdown-menu {
+    text-align: center;
+  }
 }
 
 .active-link {
@@ -141,11 +171,21 @@
   border-bottom: 2px solid #000000;
 }
 
-.ff {
+.logo {
   font-size: 1.8rem;
   font-weight: 700;
-  color: var(--primary) !important;
-  gap: 10px;  
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  & i {
+    color: var(--accent);
+  }
+  & .main-logo {
+    color: var(--primary);
+    text-decoration: none;
+  }
 }
 
 @keyframes slideDown {
