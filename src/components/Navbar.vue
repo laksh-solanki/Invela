@@ -1,80 +1,46 @@
 <template>
-  <nav class="navbar navbar-expand-lg bg-body sticky-top shadow-none">
+  <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
     <div class="container">
       <div class="navbar-brand logo animate__animated animate__backInLeft">
         <i class="fas fa-cube"></i>
         <router-link to="/" class="main-logo">My-App</router-link>
       </div>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div
-        class="collapse navbar-collapse justify-content-end align-items-center"
-        id="navbarNavDropdown"
-      >
-        <ul class="navbar-nav text-center align-items-center">
+      <div class="collapse navbar-collapse justify-content-center align-items-center" id="navbarNavDropdown">
+        <ul class="navbar-nav w-100 ms-lg-5 justify-content-center align-items-center gap-4">
           <li class="nav-item">
-            <router-link
-              to="/"
-              exact-active-class="nav-link active-link"
-              class="nav-link fw-medium"
-              >Home</router-link
-            >
+            <router-link to="/" exact-active-class="nav-link active-link" class="nav-link fw-medium">Home</router-link>
           </li>
           <li class="nav-item">
-            <router-link
-              to="/services"
-              exact-active-class="active-link nav-link"
-              class="nav-link fw-medium"
-              >Services</router-link
-            >
+            <router-link to="/services" exact-active-class="active-link nav-link"
+              class="nav-link fw-medium">Services</router-link>
           </li>
           <li class="nav-item">
-            <router-link
-              to="/about"
-              exact-active-class="active-link nav-link"
-              class="nav-link fw-medium"
-              >About</router-link
-            >
+            <router-link to="/about" exact-active-class="active-link nav-link"
+              class="nav-link fw-medium">About</router-link>
           </li>
           <li class="nav-item dropdown">
-            <a
-              class="nav-link fw-medium dropdown-toggle"
-              href="#"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
+            <a class="nav-link fw-medium dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
               Contact
             </a>
-            <ul class="dropdown-menu text-lg-start">
+            <ul class="dropdown-menu text-lg-start p-2">
               <li>
-                <router-link to="/signin" class="dropdown-item"
-                  >SignIn</router-link
-                >
+                <router-link to="/signin" class="dropdown-item rounded-2">SignIn</router-link>
               </li>
               <li>
-                <router-link to="/contact" class="dropdown-item"
-                  >Contact</router-link
-                >
+                <router-link to="/contact" class="dropdown-item rounded-2 mt-1">Contact</router-link>
               </li>
             </ul>
           </li>
-          <li class="ms-lg-5 ms-sm-0">
-            <div class="hero-buttons justify-content-center">
+          <li class="nav-item ms-lg-auto">
+            <div class="hero-buttons">
               <button class="btn btn-outline">
-                <i class="fas fa-play-circle"></i
-                ><router-link to="/Login" class="dropdown-item"
-                  >Login</router-link
-                >
+                <i class="fas fa-play-circle"></i>
+                <router-link to="/Login" class="dropdown-item">Login</router-link>
               </button>
             </div>
           </li>
@@ -91,20 +57,17 @@
   color: 3px solid var(--primary);
 }
 
-.navbar-toggler::before {
-  border: 3px solid var(--primary);
-}
-
-.navbar-toggler-icon {
-  color: var(--primary) !important;
-}
-
 .navbar {
   animation: slideDown 0.7s ease forwards;
-}
+  background-color: rgba(0, 0, 0, 0.838);
 
-.navbar-nav {
-  font-size: 1.13rem;
+  & .navbar-nav {
+    font-size: 1.13rem;
+
+    & .nav-item>.nav-link {
+      color: rgb(72, 48, 251) !important;
+    }
+  }
 }
 
 .btn {
@@ -147,8 +110,7 @@
 
 .hero-buttons {
   display: flex;
-  width: 100%;
-  gap: 20px;
+  gap: 10px;
 }
 
 .dropdown-menu {
@@ -156,13 +118,23 @@
   border-radius: var(--radius);
 }
 
-@media only screen and (max-width: 500px) {
+@media (max-width: 991.98px) {
   .btn {
-    padding: 10px 45px;
+    padding: 10px 90px;
+    margin-top: -3px;
   }
 
-  .dropdown-menu {
-    text-align: center;
+  .navbar-nav {
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    gap: 1.8rem !important;
+    width: 100%;
+    align-items: stretch !important;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+    width: 100%;
   }
 }
 
@@ -182,6 +154,7 @@
   & i {
     color: var(--accent);
   }
+
   & .main-logo {
     color: var(--primary);
     text-decoration: none;

@@ -1,39 +1,36 @@
 <template>
   <div class="Home">
-    <main >
-      <section class="hero">
-        <div class="container">
-          <div class="hero-grid">
-            <div class="hero-content">
-              <h1>Build Amazing Layouts with <span>CSS Grid</span></h1>
-              <p>
-                Create responsive, modern web designs with our powerful CSS Grid
-                system. Perfect for any project from simple websites to complex
-                applications.
-              </p>
-              <div class="hero-buttons">
-                <button class="btn btn-primary">
-                  <i class="fas fa-rocket"></i> Start Building
-                </button>
-                <button class="btn btn-outline">
-                  <i class="fas fa-play-circle"></i> Watch Demo
-                </button>
-              </div>
-            </div>
-            <div class="hero-image">
-              <div class="image-container">
-                <img
-                  src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80"
-                  alt="CSS Grid Layout"
-                />
-              </div>
-              <div class="decoration dec-1"></div>
-              <div class="decoration dec-2"></div>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <h1>Build Amazing Layouts with <span>CSS Grid</span></h1>
+            <p>
+              Create responsive, modern web designs with our powerful CSS Grid
+              system. Perfect for any project from simple websites to complex
+              applications.
+            </p>
+            <div class="hero-buttons">
+              <button class="btn btn-primary">
+                <i class="fas fa-rocket"></i> Start Building
+              </button>
+              <button class="btn btn-outline">
+                <i class="fas fa-play-circle"></i> Watch Demo
+              </button>
             </div>
           </div>
+          <div class="hero-image">
+            <div class="image-container">
+              <img
+                src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80"
+                alt="CSS Grid Layout" />
+            </div>
+            <div class="decoration dec-1"></div>
+            <div class="decoration dec-2"></div>
+          </div>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -58,7 +55,6 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 <style scoped>
-
 .btn {
   padding: 12px 24px;
   border-radius: var(--radius);
@@ -98,6 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /* Hero Section */
 .hero {
+  background-color: #080808;
   padding: 100px 0;
   position: relative;
   overflow: hidden;
@@ -119,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 20px;
-  color: var(--dark);
+  color: white;
 }
 
 .hero-content h1 span {
@@ -134,14 +131,14 @@ document.addEventListener("DOMContentLoaded", function () {
   left: 0;
   width: 100%;
   height: 15px;
-  background: rgba(67, 97, 238, 0.2);
+  background: rgba(64, 98, 249, 0.2);
   z-index: -1;
   border-radius: 20px;
 }
 
 .hero-content p {
   font-size: 1.2rem;
-  color: #555;
+  color: #969696;
   margin-bottom: 30px;
 }
 
@@ -180,7 +177,7 @@ document.addEventListener("DOMContentLoaded", function () {
   height: 200px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--accent), var(--primary));
-  opacity: 0.1;
+  opacity: 0.3;
   z-index: -1;
 }
 
@@ -197,5 +194,36 @@ document.addEventListener("DOMContentLoaded", function () {
   height: 250px;
   animation: float 8s ease-in-out infinite;
   animation-delay: 1s;
+}
+
+@media (max-width: 992px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .header-grid {
+    grid-template-columns: auto 1fr;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
 }
 </style>

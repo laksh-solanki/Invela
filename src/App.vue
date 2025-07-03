@@ -1,6 +1,6 @@
 <template>
   <Navbar />
-  <router-view class="main"/>
+  <router-view />
   <Footer />
 </template>
 
@@ -8,10 +8,3 @@
 import Navbar from "./components/Navbar.vue";
 import Footer from "./components/Footer.vue";
 </script>
-
-<style scoped>
-.main{
-  width: 100%;
-  height: 100%;
-}
-</style>

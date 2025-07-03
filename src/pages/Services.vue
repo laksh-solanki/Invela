@@ -81,7 +81,7 @@
 
 .Services {
   min-height: 100vh;
-  background: #f7f8fa;
+  background: #000000;
 }
 .services-hero {
   position: relative;
@@ -209,18 +209,26 @@
   gap: 2.2rem;
   justify-content: center;
   flex-wrap: wrap;
+  padding: 1.3rem;
 }
 .choose-feature {
-  background: #f4f6fb;
+  background: #e8e8e9;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(67, 97, 238, 0.06);
-  padding: 1.2rem 1rem 1rem 1rem;
+  padding: 1.2rem;
   width: 220px;
   display: flex;
   flex-direction: column;
   align-items: center;
   transition: transform 0.2s, box-shadow 0.2s;
 }
+
+.choose-feature:hover{
+  margin-top: -2px;
+  box-shadow: none;
+  background-color: #e0e7ff;
+}
+
 .choose-feature i {
   font-size: 1.7rem;
   color: #ffbe0b;
