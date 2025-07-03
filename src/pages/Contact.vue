@@ -3,40 +3,64 @@
     <div class="contact-page">
       <h1 class="contact-title">Contact Us</h1>
       <div class="contact-content">
-        <div class="contact-info">
-          <h2>Get in Touch</h2>
+        <div class="contact-info card">
+          <h2><i class="fa fa-info-circle"></i> Get in Touch</h2>
           <p>
-            We'd love to hear from you! Fill out the form or reach us directly
-            at:
+            We'd love to hear from you! Fill out the form or reach us directly at:
           </p>
           <ul>
-            <li><i class="fas fa-envelope"></i> hello@example.com</li>
-            <li><i class="fas fa-phone"></i> +1 234 567 8901</li>
-            <li>
-              <i class="fas fa-map-marker-alt"></i> 123 Main St, City, Country
-            </li>
+            <li><i class="fa fa-envelope"></i> hello@example.com</li>
+            <li><i class="fa fa-phone"></i> +1 234 567 8901</li>
+            <li><i class="fa fa-map-marker"></i> 123 Main St, City, Country</li>
           </ul>
+          <div class="map-preview">
+            <iframe
+              title="Google Map"
+              width="100%"
+              height="160"
+              frameborder="0"
+              style="border:0; border-radius: 10px; margin-top: 1rem;"
+              src="https://maps.google.com/maps?q=123%20Main%20St&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              allowfullscreen
+            ></iframe>
+          </div>
         </div>
-        <form class="contact-form" @submit.prevent="submitContact">
-          <input
-            v-model="contact.name"
-            type="text"
-            placeholder="Your Name"
-            required
-          />
-          <input
-            v-model="contact.email"
-            type="email"
-            placeholder="Your Email"
-            required
-          />
-          <textarea
-            v-model="contact.message"
-            placeholder="Your Message"
-            required
-          ></textarea>
+        <form class="contact-form card" @submit.prevent="submitContact">
+          <div class="form-floating-icon">
+            <i class="fa fa-user"></i>
+            <input
+              v-model="contact.name"
+              type="text"
+              id="name"
+              required
+              placeholder="Your Name"
+            />
+            <label for="name">Your Name</label>
+          </div>
+          <div class="form-floating-icon">
+            <i class="fa fa-envelope"></i>
+            <input
+              v-model="contact.email"
+              type="email"
+              id="email"
+              required
+              placeholder="Your Email"
+            />
+            <label for="email">Your Email</label>
+          </div>
+          <div class="form-floating-icon">
+            <i class="fa fa-comment"></i>
+            <textarea
+              v-model="contact.message"
+              id="message"
+              required
+              placeholder="Your Message"
+              rows="4"
+            ></textarea>
+            <label for="message">Your Message</label>
+          </div>
           <button class="btn btn-primary" type="submit">
-            <i class="fas fa-paper-plane"></i> Send Message
+            <i class="fa fa-paper-plane"></i> Send Message
           </button>
         </form>
       </div>
@@ -46,7 +70,7 @@
         :class="['alert', 'alert-success', 'contact-alert', alertAnimation]"
         role="alert"
       >
-        Thank you! We'll get back to you soon.
+        <i class="fa fa-check-circle"></i> Thank you! We'll get back to you soon.
       </div>
     </div>
   </div>
@@ -77,77 +101,58 @@ function submitContact() {
 </script>
 
 <style scoped>
-.btn {
-  padding: 12px 24px;
-  border-radius: var(--radius);
-  font-weight: 500;
-  cursor: pointer;
-  transition: var(--transition);
-  border: none;
-  font-size: 1rem;
-  display: inline-flex;
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
+@import "https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css";
+
+.Contact {
+  min-height: 100vh;
+  background: #f4f6fb;
+  display: flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
 }
-
-.btn-primary {
-  background: var(--primary);
-  color: white;
-  box-shadow: 0 4px 6px rgba(67, 97, 238, 0.3);
-}
-
-.btn-primary:hover {
-  background: var(--secondary);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 15px rgba(67, 97, 238, 0.4);
-}
-
 .contact-page {
   margin: 0 auto;
   padding: 2.5rem 1rem;
+  width: 100%;
+  max-width: 1100px;
 }
-
 .contact-title {
   text-align: center;
-  color: var(--primary, #4361ee);
+  color: #4361ee;
   font-size: 2.2rem;
   font-weight: 700;
   margin-bottom: 2rem;
 }
-
 .contact-content {
   display: flex;
   gap: 2.5rem;
   flex-wrap: wrap;
   justify-content: center;
 }
-
-.contact-info,
-.contact-form {
-  flex: 1 1 380px;
-  max-width: 650px;
+.card {
   background: #fff;
-  border-radius: 14px;
+  border-radius: 12px;
   box-shadow: 0 4px 24px rgba(67, 97, 238, 0.08);
-  padding: 2.5rem 2rem; /* Increased padding for a more spacious look */
+  padding: 2.5rem 2rem;
   margin-bottom: 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-
 .contact-info h2 {
-  color: var(--primary, #4361ee);
+  color: #4361ee;
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
-
 .contact-info ul {
   list-style: none;
   padding: 0;
   margin: 1.2rem 0 0 0;
 }
-
 .contact-info li {
   margin-bottom: 0.7rem;
   font-size: 1rem;
@@ -156,30 +161,92 @@ function submitContact() {
   align-items: center;
   gap: 8px;
 }
-
 .contact-info i {
-  color: var(--primary, #4361ee);
+  color: #4361ee;
 }
-
-.contact-form input,
-.contact-form textarea {
+.map-preview {
+  margin-top: 1.2rem;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(67, 97, 238, 0.10);
+}
+.contact-form {
+  gap: 0.5rem;
+}
+.form-floating-icon {
+  position: relative;
+  margin-bottom: 1.3rem;
+}
+.form-floating-icon i {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #bdbdbd;
+  font-size: 1.1em;
+  z-index: 2;
+}
+.form-floating-icon input,
+.form-floating-icon textarea {
   width: 100%;
-  padding: 12px;
+  padding: 12px 12px 12px 40px;
   border: 1px solid #e0e0e0;
-  margin-bottom: 14px;
   border-radius: 8px;
   font-size: 1rem;
+  background: #f9f9f9;
+  transition: border 0.2s;
   resize: none;
 }
-
-.contact-form textarea {
-  min-height: 90px;
+.form-floating-icon input:focus,
+.form-floating-icon textarea:focus {
+  border: 1.5px solid #4361ee;
+  background: #fff;
+  outline: none;
 }
-
-.contact-form button {
-  align-self: flex-end;
+.form-floating-icon label {
+  position: absolute;
+  left: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #aaa;
+  font-size: 1em;
+  pointer-events: none;
+  transition: 0.2s;
+  background: transparent;
 }
-
+.form-floating-icon input:not(:placeholder-shown) + label,
+.form-floating-icon input:focus + label,
+.form-floating-icon textarea:not(:placeholder-shown) + label,
+.form-floating-icon textarea:focus + label {
+  top: -12px;
+  left: 36px;
+  font-size: 0.85em;
+  color: #4361ee;
+  background: #fff;
+  padding: 0 4px;
+}
+.btn {
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(.4,2,.6,1);
+  border: none;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-primary {
+  background: #4361ee;
+  color: white;
+  box-shadow: 0 4px 6px rgba(67, 97, 238, 0.3);
+}
+.btn-primary:hover {
+  background: #2743a6;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 15px rgba(67, 97, 238, 0.4);
+}
 .contact-alert {
   position: fixed;
   bottom: 32px;
@@ -188,9 +255,11 @@ function submitContact() {
   z-index: 9999;
   box-shadow: 0 4px 24px rgba(67, 97, 238, 0.12);
   animation-duration: 0.7s;
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
-
-/* Responsive */
 @media (max-width: 700px) {
   .contact-content {
     flex-direction: column;

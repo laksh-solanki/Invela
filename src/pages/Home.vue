@@ -1,6 +1,6 @@
 <template>
   <div class="Home">
-    <main class="container">
+    <main >
       <section class="hero">
         <div class="container">
           <div class="hero-grid">

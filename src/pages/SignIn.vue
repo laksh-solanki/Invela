@@ -1,63 +1,53 @@
 <template>
   <div class="signin">
     <div class="signin-container">
-      <h2>Sign Up</h2>
+      <h2>Create Your Account</h2>
       <form @submit.prevent="onSubmit">
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input v-model="email" type="email" id="email" required />
+        <div class="form-group input-icon-group">
+          <span class="input-icon">
+            <i class="fa fa-envelope"></i>
+          </span>
+          <input v-model="email" type="email" id="email" placeholder="Email" required />
         </div>
-        <div class="form-group">
-          <label for="password">Choose Password</label>
-          <div style="position: relative">
-            <input
-              v-model="password"
-              :type="showPassword ? 'text' : 'password'"
-              id="password"
-              required
-              minlength="6"
-            />
-            <span
-              @click="togglePassword"
-              style="
-                position: absolute;
-                right: 8px;
-                top: 50%;
-                transform: translateY(-50%);
-                cursor: pointer;
-              "
-              aria-label="Toggle password visibility"
-            >
-              <i :class="showPassword ? 'fa fa-eye-slash' : 'fa fa-eye'"></i>
-            </span>
-          </div>
+        <div class="form-group input-icon-group">
+          <span class="input-icon">
+            <i class="fa fa-lock"></i>
+          </span>
+          <input
+            v-model="password"
+            :type="showPassword ? 'text' : 'password'"
+            id="password"
+            placeholder="Choose Password"
+            required
+            minlength="6"
+          />
+          <span
+            @click="togglePassword"
+            class="toggle-password"
+            aria-label="Toggle password visibility"
+          >
+            <i :class="showPassword ? 'fa fa-eye-slash' : 'fa fa-eye'"></i>
+          </span>
         </div>
-        <div class="form-group">
-          <label for="confirmPassword">Confirm Password</label>
-          <div style="position: relative">
-            <input
-              v-model="confirmPassword"
-              :type="showConfirmPassword ? 'text' : 'password'"
-              id="confirmPassword"
-              required
-              minlength="6"
-            />
-            <span
-              @click="toggleConfirmPassword"
-              style="
-                position: absolute;
-                right: 8px;
-                top: 50%;
-                transform: translateY(-50%);
-                cursor: pointer;
-              "
-              aria-label="Toggle confirm password visibility"
-            >
-              <i
-                :class="showConfirmPassword ? 'fa fa-eye-slash' : 'fa fa-eye'"
-              ></i>
-            </span>
-          </div>
+        <div class="form-group input-icon-group">
+          <span class="input-icon">
+            <i class="fa fa-lock"></i>
+          </span>
+          <input
+            v-model="confirmPassword"
+            :type="showConfirmPassword ? 'text' : 'password'"
+            id="confirmPassword"
+            placeholder="Confirm Password"
+            required
+            minlength="6"
+          />
+          <span
+            @click="toggleConfirmPassword"
+            class="toggle-password"
+            aria-label="Toggle confirm password visibility"
+          >
+            <i :class="showConfirmPassword ? 'fa fa-eye-slash' : 'fa fa-eye'"></i>
+          </span>
         </div>
         <div class="form-group agreement">
           <input v-model="agreed" type="checkbox" id="agreement" required />
@@ -65,7 +55,16 @@
             I agree to the <a href="#" target="_blank">Terms & Conditions</a>
           </label>
         </div>
-        <button type="submit">Sign Up</button>
+        <button type="submit" class="btn-primary">Sign Up</button>
+        <div class="divider"><span>or</span></div>
+        <div class="social-login">
+          <button type="button" class="btn-social google" @click="onGoogleSignUp">
+            <i class="fa fa-google"></i> Sign up with Google
+          </button>
+          <button type="button" class="btn-social facebook" @click="onFacebookSignUp">
+            <i class="fa fa-facebook"></i> Sign up with Facebook
+          </button>
+        </div>
       </form>
       <!-- Bootstrap Alert -->
       <transition name="fade">
@@ -74,9 +73,7 @@
           class="alert alert-success custom-alert"
           role="alert"
         >
-          Signed up as <strong>{{ email }}</strong
-          >! <span class="timer">{{ alertSeconds }}</span
-          >s
+          Signed up as <strong>{{ email }}</strong>! <span class="timer">{{ alertSeconds }}</span>s
         </div>
       </transition>
       <transition name="fade">
@@ -120,7 +117,6 @@ export default {
       this.showConfirmPassword = !this.showConfirmPassword;
     },
     onSubmit() {
-      // Validation
       if (this.password !== this.confirmPassword) {
         this.showError = true;
         this.errorMessage = "Passwords do not match!";
@@ -133,26 +129,27 @@ export default {
         setTimeout(() => (this.showError = false), 2500);
         return;
       }
-
       this.showAlert = true;
       this.alertSeconds = 3;
-
-      // Clear any previous timers
       clearTimeout(this.alertTimer);
       clearInterval(this.alertInterval);
-
-      // Countdown for alert
       this.alertInterval = setInterval(() => {
         if (this.alertSeconds > 1) {
           this.alertSeconds--;
         }
       }, 1000);
-
-      // Hide alert after 3 seconds
       this.alertTimer = setTimeout(() => {
         this.showAlert = false;
         clearInterval(this.alertInterval);
       }, 3000);
+    },
+    onGoogleSignUp() {
+      // Placeholder for Google sign up logic
+      alert("Google sign up clicked!");
+    },
+    onFacebookSignUp() {
+      // Placeholder for Facebook sign up logic
+      alert("Facebook sign up clicked!");
     },
   },
   beforeDestroy() {
@@ -164,54 +161,79 @@ export default {
 
 <style scoped>
 @import "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css";
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
 
+.signin {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f6fb;
+}
+.signin-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 36px 28px 32px 28px;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+h2 {
+  text-align: center;
+  margin-bottom: 28px;
+  font-weight: 700;
+  color: #222;
+}
+.form-group {
+  margin-bottom: 18px;
+  position: relative;
+}
+.input-icon-group {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #bdbdbd;
+  font-size: 1.1em;
+  z-index: 2;
+}
+input[type="email"],
 input[type="password"],
 input[type="text"]#password,
 input[type="text"]#confirmPassword,
 input[type="password"]#confirmPassword {
   width: 100%;
-  padding: 8px 10px;
-  padding-right: 30px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: medium;
-  box-sizing: border-box;
+  padding: 10px 10px 10px 38px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 1em;
+  background: #f9f9f9;
+  transition: border 0.2s;
 }
-
-.signin {
-  height: 546px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.signin-container {
-  width: 400px;
-  padding: 32px 24px;
-  border-radius: 8px;
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]#password:focus,
+input[type="text"]#confirmPassword:focus,
+input[type="password"]#confirmPassword:focus {
+  border: 1.5px solid #1976d2;
   background: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  position: relative;
+  outline: none;
 }
-h2 {
-  text-align: center;
-  margin-bottom: 24px;
-}
-.form-group {
-  margin-bottom: 18px;
-}
-label {
-  display: block;
-  margin-bottom: 6px;
-  font-weight: 500;
-}
-input[type="email"],
-input[type="password"] {
-  width: 100%;
-  padding: 8px 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: medium;
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #bdbdbd;
+  font-size: 1.1em;
+  z-index: 2;
 }
 .agreement {
   display: flex;
@@ -223,22 +245,74 @@ input[type="password"] {
   font-weight: 400;
   font-size: 0.97em;
 }
-button[type="submit"] {
+.btn-primary {
   width: 100%;
-  padding: 10px 0;
-  background: #388e3c;
+  padding: 12px 0;
+  background: #1976d2;
   color: #fff;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   font-weight: 600;
+  font-size: 1.08em;
   cursor: pointer;
+  margin-bottom: 10px;
   transition: background 0.2s;
 }
-button[type="submit"]:hover {
-  background: #357a38;
+.btn-primary:hover {
+  background: #1565c0;
 }
-
-/* Bootstrap alert custom position and animation */
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 18px 0 12px 0;
+}
+.divider span {
+  flex: 1;
+  border-bottom: 1px solid #e0e0e0;
+  margin: 0 10px;
+  color: #aaa;
+  font-size: 0.95em;
+  position: relative;
+  top: 2px;
+}
+.social-login {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.btn-social {
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-social.google {
+  background: #fff;
+  color: #db4437;
+  border: 1px solid #db4437;
+}
+.btn-social.google:hover {
+  background: #db4437;
+  color: #fff;
+}
+.btn-social.facebook {
+  background: #fff;
+  color: #1877f3;
+  border: 1px solid #1877f3;
+}
+.btn-social.facebook:hover {
+  background: #1877f3;
+  color: #fff;
+}
 .custom-alert {
   position: fixed;
   bottom: 32px;
@@ -270,5 +344,11 @@ button[type="submit"]:hover {
 .timer {
   font-weight: bold;
   margin-left: 4px;
+}
+@media (max-width: 500px) {
+  .signin-container {
+    max-width: 95vw;
+    padding: 18px 6vw 18px 6vw;
+  }
 }
 </style>
