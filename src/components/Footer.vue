@@ -33,6 +33,7 @@
   color: #f2e9e4;
   padding: 2rem 0 0.5rem 0;
   font-size: 1rem;
+  position: relative;
 }
 
 .footer-container {
@@ -52,6 +53,7 @@
   font-size: 1.3rem;
   font-weight: 700;
 }
+
 
 .footer-logo {
   color: #f2e9e4;

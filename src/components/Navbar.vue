@@ -22,19 +22,25 @@
             <router-link to="/about" exact-active-class="active-link nav-link"
               class="nav-link fw-medium">About</router-link>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link fw-medium dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
+          <li class="nav-item dropdown" @mouseleave="closeDropdown">
+            <a class="nav-link fw-medium" href="#" role="button" @click.prevent="toggleDropdown"
+              :aria-expanded="showDropdown">
               Contact
+              <span :class="['dropdown-arrow', { rotated: showDropdown }]">
+                <i class="fas fa-chevron-down"></i>
+              </span>
             </a>
-            <ul class="dropdown-menu text-lg-start p-2">
-              <li>
-                <router-link to="/signin" class="dropdown-item rounded-2">SignIn</router-link>
-              </li>
-              <li>
-                <router-link to="/contact" class="dropdown-item rounded-2 mt-1">Contact</router-link>
-              </li>
-            </ul>
+            <transition name="dropdown-fade">
+              <ul v-show="showDropdown" class="dropdown-menu text-lg-start p-2"
+                style="display: block; min-width: 160px">
+                <li>
+                  <router-link to="/signin" class="dropdown-item rounded-2">SignIn</router-link>
+                </li>
+                <li>
+                  <router-link to="/contact" class="dropdown-item rounded-2 mt-1">Contact</router-link>
+                </li>
+              </ul>
+            </transition>
           </li>
           <li class="nav-item ms-lg-auto">
             <div class="hero-buttons">
@@ -50,6 +56,39 @@
   </nav>
 </template>
 
+<script setup>
+import { ref, onMounted, onBeforeUnmount } from "vue";
+const showDropdown = ref(false);
+
+function toggleDropdown() {
+  showDropdown.value = !showDropdown.value;
+}
+
+function closeDropdown() {
+  showDropdown.value = false;
+}
+
+// Close dropdown on click outside or ESC key
+function handleClickOutside(event) {
+  const dropdown = document.querySelector(".nav-item.dropdown");
+  if (dropdown && !dropdown.contains(event.target)) {
+    closeDropdown();
+  }
+}
+function handleEsc(event) {
+  if (event.key === "Escape") closeDropdown();
+}
+
+onMounted(() => {
+  document.addEventListener("mousedown", handleClickOutside);
+  document.addEventListener("keydown", handleEsc);
+});
+onBeforeUnmount(() => {
+  document.removeEventListener("mousedown", handleClickOutside);
+  document.removeEventListener("keydown", handleEsc);
+});
+</script>
+
 <style scoped>
 /* Change background color of toggler icon */
 .navbar-toggler-icon {
@@ -59,7 +98,7 @@
 
 .navbar {
   animation: slideDown 0.7s ease forwards;
-  background-color: rgba(0, 0, 0, 0.838);
+  background-color: rgba(0, 0, 0, 0.916);
 
   & .navbar-nav {
     font-size: 1.13rem;
@@ -113,9 +152,38 @@
   gap: 10px;
 }
 
+.dropdown-fade-enter-active,
+.dropdown-fade-leave-active {
+  transition: opacity 0.25s, transform 0.25s;
+}
+
+.dropdown-fade-enter-from,
+.dropdown-fade-leave-to {
+  opacity: 0;
+  transform: translateY(-10px) scaleY(0.95);
+}
+
+.dropdown-fade-enter-to,
+.dropdown-fade-leave-from {
+  opacity: 1;
+  transform: translateY(0) scaleY(1);
+}
+
+/* Responsive dropdown menu */
 .dropdown-menu {
   margin-top: 5px !important;
   border-radius: var(--radius);
+  min-width: 180px;
+  max-width: 90vw;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  left: 0;
+  right: auto;
+  position: absolute;
+  z-index: 1000;
+  background: #fff;
+  top: 100%;
+  transform-origin: top;
+  /* Animation handled by transition */
 }
 
 @media (max-width: 991.98px) {
@@ -135,6 +203,17 @@
   .hero-buttons {
     justify-content: center;
     width: 100%;
+  }
+
+  .dropdown-menu {
+    position: static !important;
+    width: 100%;
+    min-width: unset;
+    box-shadow: none;
+    background: #fff;
+    left: 0;
+    right: 0;
+    top: auto;
   }
 }
 
@@ -159,6 +238,16 @@
     color: var(--primary);
     text-decoration: none;
   }
+}
+
+.dropdown-arrow {
+  display: inline-block;
+  margin-left: 6px;
+  transition: transform 0.3s cubic-bezier(0.4, 2, 0.6, 1);
+}
+
+.dropdown-arrow.rotated {
+  transform: rotate(180deg);
 }
 
 @keyframes slideDown {
