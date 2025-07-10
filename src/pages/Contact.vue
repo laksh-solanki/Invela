@@ -10,7 +10,7 @@
           </p>
           <ul>
             <li><i class="fa fa-envelope"></i> lakshsolanki848@gmail.com</li>
-            <li><i class="fa fa-phone"></i> +1 234 567 8901</li>
+            <li><i class="fa fa-phone"></i> +91 9033220744</li>
             <li><i class="fa fa-map-marker"></i> 123 Main St, City, Country</li>
           </ul>
           <div class="map-preview">
