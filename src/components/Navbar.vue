@@ -3,7 +3,7 @@
     <div class="container">
       <div class="navbar-brand logo animate__animated animate__backInLeft">
         <i class="fas fa-cube"></i>
-        <router-link to="/" class="main-logo">My-App</router-link>
+        <router-link to="/" class="main-logo">Invela</router-link>
       </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,11 +15,11 @@
             <router-link to="/" exact-active-class="nav-link active-link" class="nav-link fw-medium">Home</router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/services" exact-active-class="active-link nav-link"
+            <router-link to="/Services" exact-active-class="active-link nav-link"
               class="nav-link fw-medium">Services</router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/about" exact-active-class="active-link nav-link"
+            <router-link to="/About" exact-active-class="active-link nav-link"
               class="nav-link fw-medium">About</router-link>
           </li>
           <li class="nav-item dropdown" @mouseleave="closeDropdown">
@@ -34,10 +34,10 @@
               <ul v-show="showDropdown" class="dropdown-menu text-lg-start p-2"
                 style="display: block; min-width: 160px">
                 <li>
-                  <router-link to="/signin" class="dropdown-item rounded-2">SignIn</router-link>
+                  <router-link to="/SignIn" class="dropdown-item rounded-2">SignIn</router-link>
                 </li>
                 <li>
-                  <router-link to="/contact" class="dropdown-item rounded-2 mt-1">Contact</router-link>
+                  <router-link to="/Contact" class="dropdown-item rounded-2 mt-1">Contact</router-link>
                 </li>
               </ul>
             </transition>

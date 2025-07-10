@@ -3,7 +3,7 @@
     <div class="footer-container">
       <div class="footer-brand">
         <i class="fas fa-cube"></i>
-        <span class="footer-logo">My-App</span>
+        <span class="footer-logo">Invela</span>
       </div>
       <ul class="footer-links">
         <li><router-link to="/">Home</router-link></li>

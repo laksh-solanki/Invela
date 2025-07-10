@@ -8,11 +8,11 @@ import signIn from "@/pages/SignIn.vue";
 
 const routes = [
   { path: "/", name: "Home", component: Home },
-  { path: "/about", name: "About", component: About },
-  { path: "/services", name: "Services", component: Services },
-  { path: "/contact", name: "Contact", component: Contact },
-  { path: "/login", name: "Login", component: Login },
-  { path: "/signin", name: "SignIn", component: signIn },
+  { path: "/About", name: "About", component: About },
+  { path: "/Services", name: "Services", component: Services },
+  { path: "/Contact", name: "Contact", component: Contact },
+  { path: "/Login", name: "Login", component: Login },
+  { path: "/SignIn", name: "SignIn", component: signIn },
 ];
 
 const router = createRouter({
