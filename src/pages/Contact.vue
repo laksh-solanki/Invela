@@ -106,7 +106,7 @@ function submitContact() {
 
 .Contact {
   min-height: 100vh;
-  background: #f4f6fb;
+  background: #000000;
   display: flex;
   align-items: center;
   justify-content: center;
