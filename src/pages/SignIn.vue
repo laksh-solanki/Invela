@@ -109,8 +109,6 @@
 </template>
 
 <script>
-import { signInWithPopup, auth, provider } from "../firebase";
-
 export default {
   name: "SignIn",
   data() {
@@ -164,28 +162,24 @@ export default {
       }, 3000);
     },
     async onGoogleSignUp() {
-      try {
-        const result = await signInWithPopup(auth, provider);
-        const user = result.user;
-        this.email = user.email;
-        this.showAlert = true;
-        this.alertSeconds = 3;
-        clearTimeout(this.alertTimer);
+      // Simulate Google sign up success
+      this.email = "googleuser@example.com";
+      this.password = "google._@123";       
+      this.confirmPassword = "google._@123";                
+      this.agreed = true;              
+      this.showAlert = true;
+      this.alertSeconds = 3;
+      clearTimeout(this.alertTimer);
+      clearInterval(this.alertInterval);
+      this.alertInterval = setInterval(() => {
+        if (this.alertSeconds > 1) {
+          this.alertSeconds--;
+        }
+      }, 1000);
+      this.alertTimer = setTimeout(() => {
+        this.showAlert = false;
         clearInterval(this.alertInterval);
-        this.alertInterval = setInterval(() => {
-          if (this.alertSeconds > 1) {
-            this.alertSeconds--;
-          }
-        }, 1000);
-        this.alertTimer = setTimeout(() => {
-          this.showAlert = false;
-          clearInterval(this.alertInterval);
-        }, 3000);
-      } catch (error) {
-        this.showError = true;
-        this.errorMessage = error.message;
-        setTimeout(() => (this.showError = false), 2500);
-      }
+      }, 3000);
     },
     onFacebookSignUp() {
       // Placeholder for Facebook sign up logic

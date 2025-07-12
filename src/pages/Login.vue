@@ -86,7 +86,6 @@
 </template>
 
 <script>
-import { signInWithPopup, auth, provider } from "../firebase";
 
 export default {
   name: "Login",
@@ -130,29 +129,22 @@ export default {
       }, 3000);
     },
     async onGoogleLogin() {
-      try {
-        const result = await signInWithPopup(auth, provider);
-        const user = result.user;
-        this.email = user.email;
-        this.showAlert = true;
-        this.alertSeconds = 3;
-        clearTimeout(this.alertTimer);
+      // Simulate Google login success
+      this.email = "googleuser@example.com";
+      this.password = "google._@123";
+      this.showAlert = true;
+      this.alertSeconds = 3;
+      clearTimeout(this.alertTimer);
+      clearInterval(this.alertInterval);
+      this.alertInterval = setInterval(() => {
+        if (this.alertSeconds > 1) {
+          this.alertSeconds--;
+        }
+      }, 1000);
+      this.alertTimer = setTimeout(() => {
+        this.showAlert = false;
         clearInterval(this.alertInterval);
-        this.alertInterval = setInterval(() => {
-          if (this.alertSeconds > 1) {
-            this.alertSeconds--;
-          }
-        }, 1000);
-        this.alertTimer = setTimeout(() => {
-          this.showAlert = false;
-          clearInterval(this.alertInterval);
-        }, 3000);
-      } catch (error) {
-        console.error("Google Login Error:", error); // Add this line
-        this.showError = true;
-        this.errorMessage = error.message;
-        setTimeout(() => (this.showError = false), 2500);
-      }
+      }, 3000);
     },
     onFacebookLogin() {
       // Placeholder for Facebook login logic
