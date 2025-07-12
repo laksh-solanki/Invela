@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /* Hero Section */
 .hero {
-  background-color: #080808;
+  background-color: #161616;
   padding: 100px 0;
   position: relative;
   overflow: hidden;

@@ -168,7 +168,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f4f6fb;
+  background: #161616;
 }
 .signin-container {
   width: 100%;

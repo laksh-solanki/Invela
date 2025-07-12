@@ -1,362 +1,328 @@
 <template>
-  <div class="About">
-    <div class="about-hero">
-      <div class="about-hero-bg"></div>
-      <div class="about-hero-content animate__animated animate__fadeInDown">
-        <h1>Meet Our Team</h1>
+  <div class="About futuristic-bg">
+    <section class="futuristic-hero animate__animated animate__fadeInDown">
+      <div class="futuristic-hero-content">
+        <h1>
+          <span class="gradient-text">Welcome to the Future</span>
+        </h1>
         <p>
-          We are a creative group of developers and designers passionate about
-          building impactful digital experiences.
+          Discover our vision for tomorrow. We blend technology, creativity, and
+          innovation to shape a smarter world.
         </p>
-        <button class="cta-btn">
-          <i class="fa fa-rocket"></i> Join Our Mission
-        </button>
+        <a href="/Contact" class="futuristic-btn">
+          <i class="fa fa-paper-plane"></i> Connect With Us
+        </a>
       </div>
-    </div>
-
-    <section class="about-team animate__animated animate__fadeInUp">
-      <h2>Our People</h2>
-      <div class="team-grid-alt">
-        <div class="team-card">
-          <div class="team-avatar">
-            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Alex" />
-          </div>
-          <div class="team-info">
-            <h3>Alex Johnson</h3>
-            <span>Lead Developer</span>
-            <div class="team-socials">
-              <a href="#"><i class="fa fa-github"></i></a>
-              <a href="#"><i class="fa fa-linkedin"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="team-card">
-          <div class="team-avatar">
-            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sara" />
-          </div>
-          <div class="team-info">
-            <h3>Sara Lee</h3>
-            <span>UI/UX Designer</span>
-            <div class="team-socials">
-              <a href="#"><i class="fa fa-dribbble"></i></a>
-              <a href="#"><i class="fa fa-linkedin"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="team-card">
-          <div class="team-avatar">
-            <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Mike" />
-          </div>
-          <div class="team-info">
-            <h3>Mike Brown</h3>
-            <span>Cloud Engineer</span>
-            <div class="team-socials">
-              <a href="#"><i class="fa fa-twitter"></i></a>
-              <a href="#"><i class="fa fa-linkedin"></i></a>
-            </div>
-          </div>
-        </div>
+      <div class="futuristic-hero-art">
+        <img
+          src="https://assets-global.website-files.com/5e9aa66fd6b2c51d6b9e3c6b/63e3e2e2b1c1b2b2b2b2b2b2_futuristic-illustration.svg"
+          alt="Futuristic Art"
+        />
       </div>
     </section>
 
-    <section class="about-values animate__animated animate__fadeInUp animate__delay-1s">
-      <h2>Our Values</h2>
-      <div class="values-timeline">
+    <section class="futuristic-cards animate__animated animate__fadeInUp">
+      <div class="futuristic-card">
+        <div class="card-icon"><i class="fa fa-robot"></i></div>
+        <h3>AI Driven</h3>
+        <p>
+          Harnessing artificial intelligence for smarter solutions and seamless
+          automation.
+        </p>
+      </div>
+      <div class="futuristic-card">
+        <div class="card-icon"><i class="fa fa-globe"></i></div>
+        <h3>Global Impact</h3>
+        <p>
+          Connecting ideas and people worldwide for a truly borderless
+          experience.
+        </p>
+      </div>
+      <div class="futuristic-card">
+        <div class="card-icon"><i class="fa fa-cloud"></i></div>
+        <h3>Cloud Powered</h3>
+        <p>
+          Scalable, secure, and always available—our cloud infrastructure powers
+          the future.
+        </p>
+      </div>
+      <div class="futuristic-card">
+        <div class="card-icon"><i class="fa fa-bolt"></i></div>
+        <h3>Instant Innovation</h3>
+        <p>
+          Rapid prototyping and deployment to keep you ahead in a fast-changing
+          world.
+        </p>
+      </div>
+    </section>
+
+    <section
+      class="futuristic-timeline animate__animated animate__fadeInUp animate__delay-1s"
+    >
+      <h2 class="gradient-text">Our Journey to Tomorrow</h2>
+      <div class="timeline-steps">
         <div class="timeline-step">
-          <div class="timeline-icon"><i class="fa fa-lightbulb-o"></i></div>
+          <div class="timeline-dot"></div>
           <div class="timeline-content">
-            <h4>Innovation</h4>
-            <p>We embrace new ideas and technologies to deliver the best solutions.</p>
-          </div>
-        </div>
-        <div class="timeline-step">
-          <div class="timeline-icon"><i class="fa fa-users"></i></div>
-          <div class="timeline-content">
-            <h4>Teamwork</h4>
-            <p>Collaboration and communication are at the heart of everything we do.</p>
+            <span class="timeline-year">2025</span>
+            <span class="timeline-desc"
+              >Quantum computing integration begins.</span
+            >
           </div>
         </div>
         <div class="timeline-step">
-          <div class="timeline-icon"><i class="fa fa-heart"></i></div>
+          <div class="timeline-dot"></div>
           <div class="timeline-content">
-            <h4>Passion</h4>
-            <p>We love what we do and strive to make a difference for our clients.</p>
+            <span class="timeline-year">2027</span>
+            <span class="timeline-desc"
+              >AI-powered virtual assistants for every user.</span
+            >
+          </div>
+        </div>
+        <div class="timeline-step">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-year">2030</span>
+            <span class="timeline-desc">Global smart city network launch.</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Mission Statement Section -->
-    <section class="about-mission animate__animated animate__fadeInUp animate__delay-1s">
-      <h2>Our Mission</h2>
-      <div class="mission-card">
-        <i class="fa fa-bullseye"></i>
-        <p>To empower businesses and individuals by creating innovative, user-centric digital solutions that make a real
-          impact.</p>
-      </div>
-    </section>
-
-    <!-- Fun Facts/Stats Section -->
-    <section class="about-facts animate__animated animate__fadeInUp animate__delay-1s">
-      <h2>Fun Facts</h2>
-      <div class="facts-row">
-        <div class="fact-card">
-          <i class="fa fa-calendar-check-o"></i>
-          <h3>10+</h3>
-          <span>Years Experience</span>
-        </div>
-        <div class="fact-card">
-          <i class="fa fa-rocket"></i>
-          <h3>50+</h3>
-          <span>Projects Delivered</span>
-        </div>
-        <div class="fact-card">
-          <i class="fa fa-smile-o"></i>
-          <h3>100%</h3>
-          <span>Client Satisfaction</span>
-        </div>
-        <div class="fact-card">
-          <i class="fa fa-globe"></i>
-          <h3>12</h3>
-          <span>Countries Served</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="about-testimonials animate__animated animate__fadeInUp animate__delay-2s">
-      <h2>What Our Clients Say</h2>
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <p>"The team exceeded our expectations and delivered a fantastic product!"</p>
-          <span>- Priya S., CEO</span>
-        </div>
-        <div class="testimonial-card">
-          <p>"Professional, creative, and always on time. Highly recommended!"</p>
-          <span>- John D., Startup Founder</span>
-        </div>
-        <div class="testimonial-card">
-          <p>"Their attention to detail and passion for their work is unmatched."</p>
-          <span>- Maria G., Product Manager</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Tech Stack/Tools Section -->
-    <section class="about-tech animate__animated animate__fadeInUp animate__delay-2s">
-      <h2>Our Tech Stack</h2>
-      <div class="tech-icons">
-        <div class="tech-icon"><i class="fa fa-html5"></i><span>HTML5</span></div>
-        <div class="tech-icon"><i class="fa fa-css3"></i><span>CSS3</span></div>
-        <div class="tech-icon"><i class="fa fa-jsfiddle"></i><span>JavaScript</span></div>
-        <div class="tech-icon"><i class="fa fa-vuejs"></i><span>Vue.js</span></div>
-        <div class="tech-icon"><i class="fa fa-cloud"></i><span>Cloud</span></div>
-        <div class="tech-icon"><i class="fa fa-database"></i><span>Database</span></div>
-      </div>
-    </section>
-
-    <!-- Call to Action Section -->
-    <section class="about-cta animate__animated animate__fadeInUp animate__delay-3s">
+    <section
+      class="futuristic-cta animate__animated animate__fadeInUp animate__delay-2s"
+    >
       <div class="cta-content">
-        <h2>Want to work with us?</h2>
-        <p>Contact us today and let's build something amazing together!</p>
-        <a href="/Contact" class="cta-btn-alt"><i class="fa fa-envelope"></i> Contact Us</a>
+        <h2>Ready to join the future?</h2>
+        <p>
+          Be part of our journey and experience the next evolution in digital
+          innovation.
+        </p>
+        <a href="/Contact" class="futuristic-btn-alt">
+          <i class="fa fa-arrow-right"></i> Get Started
+        </a>
       </div>
     </section>
+    <swiper
+      :effect="'coverflow'"
+      :grabCursor="true"
+      :centeredSlides="true"
+      :slidesPerView="'auto'"
+      :coverflowEffect="{
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+      }"
+      :pagination="false"
+      :modules="modules"
+      class="mySwiper"
+    >
+      <swiper-slide
+        v-for="(img, i) in [
+          '/src/assets/photo/certificate_page-0001.jpg',
+          'https://swiperjs.com/demos/images/nature-2.jpg',
+          'https://swiperjs.com/demos/images/nature-3.jpg',
+          'https://swiperjs.com/demos/images/nature-4.jpg',
+          'https://swiperjs.com/demos/images/nature-5.jpg',
+          'https://swiperjs.com/demos/images/nature-6.jpg',
+          'https://swiperjs.com/demos/images/nature-7.jpg',
+          'https://swiperjs.com/demos/images/nature-8.jpg',
+          'https://swiperjs.com/demos/images/nature-9.jpg',
+        ]"
+        :key="i"
+      >
+        <img :src="img" @click="openModal(img)" style="cursor: pointer" />
+      </swiper-slide>
+    </swiper>
 
-    <!-- Company Timeline/History Section -->
-    <section class="about-history animate__animated animate__fadeInUp animate__delay-3s">
-      <h2>Our Journey</h2>
-      <div class="history-timeline">
-        <div class="history-event">
-          <div class="event-year">2014</div>
-          <div class="event-desc">Company founded with a vision to innovate.</div>
-        </div>
-        <div class="history-event">
-          <div class="event-year">2016</div>
-          <div class="event-desc">Launched our first SaaS product.</div>
-        </div>
-        <div class="history-event">
-          <div class="event-year">2019</div>
-          <div class="event-desc">Expanded globally, serving clients in 10+ countries.</div>
-        </div>
-        <div class="history-event">
-          <div class="event-year">2023</div>
-          <div class="event-desc">Reached 50+ successful projects milestone.</div>
-        </div>
-      </div>
-    </section>
+    <!-- Modal for full screen image -->
+    <div v-if="showModal" class="image-modal" @click.self="closeModal">
+      <img :src="modalImg" class="modal-img" />
+      <button class="modal-close" @click="closeModal">&times;</button>
+    </div>
   </div>
 </template>
 
-<script setup>
-// No script needed for static content
+<script>
+import { ref } from "vue";
+import { Swiper, SwiperSlide } from "swiper/vue";
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+import { EffectCoverflow, Pagination } from "swiper/modules";
+
+export default {
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
+  setup() {
+    const modules = [EffectCoverflow, Pagination];
+    const showModal = ref(false);
+    const modalImg = ref("");
+
+    function openModal(imgSrc) {
+      modalImg.value = imgSrc;
+      showModal.value = true;
+    }
+    function closeModal() {
+      showModal.value = false;
+      modalImg.value = "";
+    }
+
+    return { modules, showModal, modalImg, openModal, closeModal };
+  },
+};
 </script>
 
 <style>
 @import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
 @import "https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css";
 
-.About {
-  background: #000000;
+.futuristic-bg {
+  background: radial-gradient(ellipse at top left, #1a1a2e 60%, #16213e 100%);
+  min-height: 100vh;
+  padding-bottom: 3rem;
 }
 
-.about-hero {
+.futuristic-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem 2rem 2rem 2rem;
   position: relative;
-  background: linear-gradient(120deg, #3a86ff 60%, #8338ec 100%);
-  color: #fff;
-  padding: 3.5rem 1rem 2.5rem 1rem;
-  text-align: center;
-  overflow: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
 }
 
-.about-hero-bg {
-  background: url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
-  opacity: 0.18;
-  position: absolute;
-  inset: 0;
-  z-index: 0;
+.futuristic-hero-content {
+  max-width: 500px;
+  z-index: 2;
 }
 
-.about-hero-content {
-  position: relative;
-  z-index: 1;
+.futuristic-hero-content h1 {
+  font-size: 2.8rem;
+  font-weight: 900;
+  margin-bottom: 1.2rem;
+  letter-spacing: 2px;
 }
 
-.about-hero-content h1 {
-  font-size: 2.7rem;
-  font-weight: 800;
-  margin-bottom: 0.7rem;
-  letter-spacing: 1px;
+.gradient-text {
+  background: linear-gradient(90deg, #00f2fe 0%, #4facfe 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.about-hero-content p {
+.futuristic-hero-content p {
   font-size: 1.18rem;
-  max-width: 600px;
-  margin: 0 auto 1.2rem auto;
-  opacity: 0.97;
+  color: #e0e0e0;
+  margin-bottom: 1.5rem;
 }
 
-.cta-btn {
-  background: #ffbe0b;
+.futuristic-btn {
+  background: linear-gradient(90deg, #00f2fe 0%, #4facfe 100%);
   color: #222;
   border: none;
   border-radius: 24px;
   padding: 0.7rem 2.1rem;
   font-weight: 700;
   font-size: 1.08rem;
-  box-shadow: 0 4px 16px rgba(255, 190, 11, 0.13);
+  box-shadow: 0 4px 16px rgba(79, 172, 254, 0.13);
   cursor: pointer;
   transition: background 0.2s, color 0.2s, transform 0.2s;
   margin-top: 1rem;
+  text-decoration: none;
+  display: inline-block;
 }
 
-.cta-btn:hover {
-  background: #ffd60a;
-  color: #3a86ff;
+.futuristic-btn:hover {
+  background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
+  color: #16213e;
   transform: translateY(-2px) scale(1.04);
 }
 
-.about-team {
-  max-width: 1000px;
-  margin: 2.5rem auto 0 auto;
-  padding: 0 1rem;
-  text-align: center;
-}
-
-.about-team h2 {
-  color: #3a86ff;
-  font-size: 1.7rem;
-  margin-bottom: 2.2rem;
-  font-weight: 700;
-}
-
-.team-grid-alt {
+.futuristic-hero-art {
+  flex: 1;
+  min-width: 280px;
   display: flex;
-  gap: 2.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.futuristic-hero-art img {
+  max-width: 380px;
+  width: 100%;
+  filter: drop-shadow(0 8px 32px #00f2fe55);
+  border-radius: 24px;
+}
+
+.futuristic-cards {
+  display: flex;
+  gap: 2rem;
   justify-content: center;
   flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 3rem auto 0 auto;
+  padding: 0 1rem;
 }
 
-.team-card {
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 4px 24px rgba(67, 97, 238, 0.08);
-  padding: 2.2rem 1.2rem 1.2rem 1.2rem;
-  width: 240px;
+.futuristic-card {
+  background: linear-gradient(120deg, #23234e 60%, #1a1a2e 100%);
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(79, 172, 254, 0.08);
+  padding: 2rem 1.2rem 1.2rem 1.2rem;
+  width: 230px;
   display: flex;
   flex-direction: column;
   align-items: center;
   transition: transform 0.2s, box-shadow 0.2s;
   position: relative;
+  color: #e0e0e0;
 }
 
-.team-card:hover {
+.futuristic-card:hover {
   transform: translateY(-8px) scale(1.04);
-  box-shadow: 0 8px 32px rgba(67, 97, 238, 0.15);
+  box-shadow: 0 8px 32px #00f2fe33;
 }
 
-.team-avatar {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  overflow: hidden;
+.card-icon {
+  font-size: 2.5em;
+  color: #00f2fe;
   margin-bottom: 1rem;
-  border: 3px solid #3a86ff;
-  box-shadow: 0 2px 8px rgba(58, 134, 255, 0.13);
 }
 
-.team-avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.team-info h3 {
+.futuristic-card h3 {
   margin: 0.5rem 0 0.2rem 0;
   font-size: 1.18rem;
-  color: #222;
+  color: #4facfe;
   font-weight: 700;
 }
 
-.team-info span {
-  color: #3a86ff;
-  font-size: 1rem;
-  font-weight: 500;
+.futuristic-card p {
+  color: #e0e0e0;
+  font-size: 0.98rem;
+  margin: 0;
+  text-align: center;
 }
 
-.team-socials {
-  margin-top: 0.7rem;
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-}
-
-.team-socials a {
-  color: #bdbdbd;
-  font-size: 1.2em;
-  transition: color 0.2s;
-}
-
-.team-socials a:hover {
-  color: #3a86ff;
-}
-
-.about-values {
+.futuristic-timeline {
   max-width: 900px;
-  margin: 3rem auto 2rem auto;
+  margin: 4rem auto 2rem auto;
   padding: 0 1rem;
   text-align: center;
 }
 
-.about-values h2 {
-  color: #8338ec;
+.futuristic-timeline h2 {
   font-size: 1.5rem;
   margin-bottom: 2.2rem;
   font-weight: 700;
 }
 
-.values-timeline {
+.timeline-steps {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -366,37 +332,20 @@
   position: relative;
 }
 
-.values-timeline:before {
-  content: '';
-  position: absolute;
-  left: 24px;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  background: linear-gradient(to bottom, #3a86ff, #8338ec);
-  border-radius: 2px;
-  opacity: 0.18;
-}
-
 .timeline-step {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 1.2rem;
   position: relative;
   z-index: 1;
 }
 
-.timeline-icon {
-  width: 48px;
-  height: 48px;
-  background: #fff;
+.timeline-dot {
+  width: 22px;
+  height: 22px;
+  background: linear-gradient(90deg, #00f2fe 0%, #4facfe 100%);
   border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(58, 134, 255, 0.10);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.7em;
-  color: #3a86ff;
+  box-shadow: 0 2px 8px #00f2fe55;
   margin-right: 0.5rem;
   position: relative;
   z-index: 2;
@@ -405,227 +354,41 @@
 .timeline-content {
   text-align: left;
   flex: 1;
+  color: #e0e0e0;
+  background: #23234e;
+  border-radius: 10px;
+  padding: 0.7rem 1.2rem;
+  font-size: 1.05rem;
+  font-weight: 500;
+  box-shadow: 0 2px 8px #00f2fe22;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
 }
 
-.timeline-content h4 {
-  margin-bottom: 0.3rem;
-  color: #3a86ff;
+.timeline-year {
+  color: #00f2fe;
+  font-weight: 700;
   font-size: 1.08rem;
-  font-weight: 700;
 }
 
-.timeline-content p {
-  color: #444;
+.timeline-desc {
   font-size: 0.98rem;
-  margin: 0;
 }
 
-@media (max-width: 700px) {
-  .about-hero-content h1 {
-    font-size: 1.5rem;
-  }
-
-  .about-hero-content p {
-    font-size: 1rem;
-  }
-
-  .team-grid-alt {
-    flex-direction: column;
-    gap: 1.2rem;
-  }
-
-  .team-card {
-    width: 100%;
-    max-width: 340px;
-    margin: 0 auto;
-  }
-
-  .values-timeline {
-    max-width: 100vw;
-    padding-left: 0.5rem;
-  }
-}
-
-.about-mission {
-  max-width: 800px;
-  margin: 2.5rem auto 0 auto;
-  padding: 0 1rem;
-  text-align: center;
-}
-
-.about-mission h2 {
-  color: #ffbe0b;
-  font-size: 1.5rem;
-  margin-bottom: 1.2rem;
-  font-weight: 700;
-}
-
-.mission-card {
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 4px 24px rgba(255, 190, 11, 0.08);
-  padding: 1.5rem 1.2rem;
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
-  justify-content: center;
-  font-size: 1.1rem;
-}
-
-.mission-card i {
-  color: #ffbe0b;
-  font-size: 2.2rem;
-}
-
-.about-facts {
-  max-width: 900px;
-  margin: 2.5rem auto 0 auto;
-  padding: 0 1rem;
-  text-align: center;
-}
-
-.about-facts h2 {
-  color: #3a86ff;
-  font-size: 1.5rem;
-  margin-bottom: 1.2rem;
-  font-weight: 700;
-}
-
-.facts-row {
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.fact-card {
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 4px 24px rgba(67, 97, 238, 0.08);
-  padding: 1.5rem 1.2rem;
-  width: 170px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-.fact-card i {
-  color: #3a86ff;
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-.fact-card h3 {
-  margin: 0.2rem 0 0.1rem 0;
-  font-size: 1.5rem;
-  color: #222;
-  font-weight: 800;
-}
-
-.fact-card span {
-  color: #3a86ff;
-  font-size: 1rem;
-  font-weight: 500;
-}
-
-.about-testimonials {
-  max-width: 900px;
-  margin: 2.5rem auto 0 auto;
-  padding: 0 1rem;
-  text-align: center;
-}
-
-.about-testimonials h2 {
-  color: #8338ec;
-  font-size: 1.5rem;
-  margin-bottom: 1.2rem;
-  font-weight: 700;
-}
-
-.testimonials-grid {
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.testimonial-card {
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 4px 24px rgba(131, 56, 236, 0.08);
-  padding: 1.5rem 1.2rem;
-  width: 260px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 1rem;
-  font-style: italic;
-}
-
-.testimonial-card span {
-  color: #8338ec;
-  font-size: 1rem;
-  font-weight: 500;
-  margin-top: 0.7rem;
-  font-style: normal;
-}
-
-.about-tech {
-  max-width: 900px;
-  margin: 2.5rem auto 0 auto;
-  padding: 0 1rem;
-  text-align: center;
-}
-
-.about-tech h2 {
-  color: #3a86ff;
-  font-size: 1.5rem;
-  margin-bottom: 1.2rem;
-  font-weight: 700;
-}
-
-.tech-icons {
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.tech-icon {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 2.2rem;
-  color: #3a86ff;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(58, 134, 255, 0.10);
-  padding: 1rem 1.2rem;
-  margin-bottom: 1rem;
-  min-width: 90px;
-}
-
-.tech-icon span {
-  font-size: 1rem;
-  color: #3a86ff;
-  margin-top: 0.5rem;
-  font-weight: 600;
-}
-
-.about-cta {
+.futuristic-cta {
   max-width: 700px;
-  margin: 3rem auto 2rem auto;
+  margin: 4rem auto 2rem auto;
   padding: 0 1rem;
   text-align: center;
 }
 
 .cta-content {
-  background: linear-gradient(120deg, #3a86ff 60%, #8338ec 100%);
-  color: #fff;
+  background: linear-gradient(120deg, #00f2fe 60%, #4facfe 100%);
+  color: #16213e;
   border-radius: 18px;
   padding: 2rem 1.2rem;
-  box-shadow: 0 4px 24px rgba(67, 97, 238, 0.10);
+  box-shadow: 0 4px 24px #00f2fe22;
 }
 
 .cta-content h2 {
@@ -639,118 +402,121 @@
   margin-bottom: 1.2rem;
 }
 
-.cta-btn-alt {
-  background: #ffbe0b;
-  color: #222;
+.futuristic-btn-alt {
+  background: #23234e;
+  color: #00f2fe;
   border: none;
   border-radius: 24px;
   padding: 0.7rem 2.1rem;
   font-weight: 700;
   font-size: 1.08rem;
-  box-shadow: 0 4px 16px rgba(255, 190, 11, 0.13);
+  box-shadow: 0 4px 16px #00f2fe13;
   cursor: pointer;
   transition: background 0.2s, color 0.2s, transform 0.2s;
   text-decoration: none;
   display: inline-block;
 }
 
-.cta-btn-alt:hover {
-  background: #ffd60a;
-  color: #3a86ff;
+.futuristic-btn-alt:hover {
+  background: #00f2fe;
+  color: #23234e;
   transform: translateY(-2px) scale(1.04);
 }
 
-.about-history {
-  max-width: 900px;
-  margin: 3rem auto 2rem auto;
-  padding: 0 1rem;
-  text-align: center;
-}
-
-.about-history h2 {
-  color: #ffbe0b;
-  font-size: 1.5rem;
-  margin-bottom: 2.2rem;
-  font-weight: 700;
-}
-
-.history-timeline {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 2.2rem;
-  margin: 0 auto;
-  max-width: 420px;
-  position: relative;
-}
-
-.history-event {
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
-  position: relative;
-  z-index: 1;
-}
-
-.event-year {
-  width: 60px;
-  height: 60px;
-  background: #fff;
-  border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(255, 190, 11, 0.10);
+.image-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7); /* transparent dark */
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.3em;
-  color: #ffbe0b;
-  font-weight: 800;
-  margin-right: 0.5rem;
-  position: relative;
-  z-index: 2;
+  z-index: 9999;
+  animation: fadeIn 0.3s;
 }
 
-.event-desc {
-  text-align: left;
-  flex: 1;
+.modal-img {
+  max-width: 80vw;
+  max-height: 80vh;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px #00f2fe55;
+}
+
+.modal-close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 2.5rem;
   color: #fff;
-  background: #3a86ff;
-  border-radius: 10px;
-  padding: 0.7rem 1.2rem;
-  font-size: 1.05rem;
-  font-weight: 500;
-  box-shadow: 0 2px 8px rgba(58, 134, 255, 0.10);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 10000;
 }
 
-@media (max-width: 700px) {
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
-  .facts-row,
-  .testimonials-grid,
-  .tech-icons {
+@media (max-width: 900px) {
+  .futuristic-hero {
     flex-direction: column;
-    gap: 1.2rem;
+    text-align: center;
+    gap: 2rem;
+    padding: 2rem 1rem 1rem 1rem;
   }
 
-  .fact-card,
-  .testimonial-card,
-  .tech-icon {
+  .futuristic-hero-art img {
+    max-width: 260px;
+  }
+
+  .futuristic-cards {
+    gap: 1rem;
+  }
+
+  .futuristic-card {
     width: 100%;
     max-width: 340px;
     margin: 0 auto;
   }
 
-  .about-mission,
-  .about-facts,
-  .about-testimonials,
-  .about-tech,
-  .about-cta,
-  .about-history {
+  .timeline-steps {
+    max-width: 100vw;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
   }
 
-  .history-timeline {
-    max-width: 100vw;
-    padding-left: 0.5rem;
+  .cta-content {
+    padding: 1.5rem 1.2rem;
   }
+}
+
+#app {
+  height: 100%;
+}
+
+.swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 400px;
+  height: 300px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
 }
 </style>
