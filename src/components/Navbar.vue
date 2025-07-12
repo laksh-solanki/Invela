@@ -2,7 +2,7 @@
   <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
     <div class="container">
       <div class="navbar-brand logo animate__animated animate__backInLeft">
-        <i class="fas fa-cube"></i>
+        <i class="fa-brands fa-slack"></i>
         <router-link to="/" class="main-logo">Invela</router-link>
       </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"

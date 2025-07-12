@@ -2,7 +2,7 @@
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-brand">
-        <i class="fas fa-cube"></i>
+        <i class="fa-brands fa-slack"></i>
         <span class="footer-logo">Invela</span>
       </div>
       <ul class="footer-links">
