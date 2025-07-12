@@ -88,7 +88,9 @@
         </div>
       </div>
     </section>
-
+    <div>
+      <CertificatesSwiper />
+    </div>
     <section
       class="futuristic-cta animate__animated animate__fadeInUp animate__delay-2s"
     >
@@ -103,81 +105,18 @@
         </a>
       </div>
     </section>
-    <swiper
-      :effect="'coverflow'"
-      :grabCursor="true"
-      :centeredSlides="true"
-      :slidesPerView="'auto'"
-      :coverflowEffect="{
-        rotate: 50,
-        stretch: 0,
-        depth: 100,
-        modifier: 1,
-        slideShadows: true,
-      }"
-      :pagination="false"
-      :modules="modules"
-      class="mySwiper"
-    >
-      <swiper-slide
-        v-for="(img, i) in [
-          '/src/assets/photo/certificate_page-0001.jpg',
-          'https://swiperjs.com/demos/images/nature-2.jpg',
-          'https://swiperjs.com/demos/images/nature-3.jpg',
-          'https://swiperjs.com/demos/images/nature-4.jpg',
-          'https://swiperjs.com/demos/images/nature-5.jpg',
-          'https://swiperjs.com/demos/images/nature-6.jpg',
-          'https://swiperjs.com/demos/images/nature-7.jpg',
-          'https://swiperjs.com/demos/images/nature-8.jpg',
-          'https://swiperjs.com/demos/images/nature-9.jpg',
-        ]"
-        :key="i"
-      >
-        <img :src="img" @click="openModal(img)" style="cursor: pointer" />
-      </swiper-slide>
-    </swiper>
-
-    <!-- Modal for full screen image -->
-    <div v-if="showModal" class="image-modal" @click.self="closeModal">
-      <img :src="modalImg" class="modal-img" />
-      <button class="modal-close" @click="closeModal">&times;</button>
-    </div>
   </div>
 </template>
 
 <script>
-import { ref } from "vue";
-import { Swiper, SwiperSlide } from "swiper/vue";
-import "swiper/css";
-import "swiper/css/effect-coverflow";
-import "swiper/css/pagination";
-import { EffectCoverflow, Pagination } from "swiper/modules";
+import CertificatesSwiper from '@/components/CertificatesSwiper.vue'
 
 export default {
-  components: {
-    Swiper,
-    SwiperSlide,
-  },
-  setup() {
-    const modules = [EffectCoverflow, Pagination];
-    const showModal = ref(false);
-    const modalImg = ref("");
-
-    function openModal(imgSrc) {
-      modalImg.value = imgSrc;
-      showModal.value = true;
-    }
-    function closeModal() {
-      showModal.value = false;
-      modalImg.value = "";
-    }
-
-    return { modules, showModal, modalImg, openModal, closeModal };
-  },
-};
+  components: { CertificatesSwiper }
+}
 </script>
 
-<style>
+<style scoped>
 @import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
 @import "https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css";
 
@@ -429,7 +368,8 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.7); /* transparent dark */
+  background: rgba(0, 0, 0, 0.7);
+  /* transparent dark */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -460,6 +400,7 @@ export default {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -498,25 +439,129 @@ export default {
   }
 }
 
-#app {
+.certificates-swiper {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.swiper-container {
+  height: 500px;
+  width: 100%;
+}
+
+.certificate-card {
+  position: relative;
   height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+  transform: scale(0.95);
+  transition: transform 0.5s ease;
 }
 
-.swiper {
+.certificate-image {
   width: 100%;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  height: 100%;
+  object-fit: cover;
 }
 
-.swiper-slide {
-  background-position: center;
-  background-size: cover;
-  width: 400px;
-  height: 300px;
+.certificate-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  padding: 30px 20px 20px;
+  color: white;
+  transform: translateY(100px);
+  transition: transform 0.5s ease;
 }
 
-.swiper-slide img {
-  display: block;
-  width: 100%;
+.certificate-title {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease 0.2s;
+}
+
+.certificate-issuer {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease 0.3s;
+}
+
+/* Hover and active state animations */
+.swiper-slide-active .certificate-card {
+  transform: scale(1);
+}
+
+.swiper-slide-active .certificate-overlay {
+  transform: translateY(0);
+}
+
+.swiper-slide-active .certificate-title,
+.swiper-slide-active .certificate-issuer {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Navigation styles */
+.swiper-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #4f46e5;
+  color: white;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  margin: 0 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-top: 3px solid white;
+  border-right: 3px solid white;
+}
+
+.swiper-button-prev::after {
+  transform: rotate(-135deg);
+  left: 19px;
+}
+
+.swiper-button-next::after {
+  transform: rotate(45deg);
+  left: 15px;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  transform: scale(1.1);
+  background: #6366f1;
+}
+
+.swiper-pagination {
+  position: relative;
+  width: auto;
+  bottom: auto;
+  color: #4f46e5;
+  font-weight: bold;
 }
 </style>
