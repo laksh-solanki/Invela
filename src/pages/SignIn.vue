@@ -7,7 +7,13 @@
           <span class="input-icon">
             <i class="fa fa-envelope"></i>
           </span>
-          <input v-model="email" type="email" id="email" placeholder="Email" required />
+          <input
+            v-model="email"
+            type="email"
+            id="email"
+            placeholder="Email"
+            required
+          />
         </div>
         <div class="form-group input-icon-group">
           <span class="input-icon">
@@ -46,7 +52,9 @@
             class="toggle-password"
             aria-label="Toggle confirm password visibility"
           >
-            <i :class="showConfirmPassword ? 'fa fa-eye-slash' : 'fa fa-eye'"></i>
+            <i
+              :class="showConfirmPassword ? 'fa fa-eye-slash' : 'fa fa-eye'"
+            ></i>
           </span>
         </div>
         <div class="form-group agreement">
@@ -58,10 +66,18 @@
         <button type="submit" class="btn-primary">Sign Up</button>
         <div class="divider"><span>or</span></div>
         <div class="social-login">
-          <button type="button" class="btn-social google" @click="onGoogleSignUp">
+          <button
+            type="button"
+            class="btn-social google"
+            @click="onGoogleSignUp"
+          >
             <i class="fa fa-google"></i> Sign up with Google
           </button>
-          <button type="button" class="btn-social facebook" @click="onFacebookSignUp">
+          <button
+            type="button"
+            class="btn-social facebook"
+            @click="onFacebookSignUp"
+          >
             <i class="fa fa-facebook"></i> Sign up with Facebook
           </button>
         </div>
@@ -73,7 +89,9 @@
           class="alert alert-success custom-alert"
           role="alert"
         >
-          Signed up as <strong>{{ email }}</strong>! <span class="timer">{{ alertSeconds }}</span>s
+          Signed up as <strong>{{ email }}</strong
+          >! <span class="timer">{{ alertSeconds }}</span
+          >s
         </div>
       </transition>
       <transition name="fade">
@@ -91,6 +109,8 @@
 </template>
 
 <script>
+import { signInWithPopup, auth, provider } from "../firebase";
+
 export default {
   name: "SignIn",
   data() {
@@ -143,9 +163,29 @@ export default {
         clearInterval(this.alertInterval);
       }, 3000);
     },
-    onGoogleSignUp() {
-      // Placeholder for Google sign up logic
-      alert("Google sign up clicked!");
+    async onGoogleSignUp() {
+      try {
+        const result = await signInWithPopup(auth, provider);
+        const user = result.user;
+        this.email = user.email;
+        this.showAlert = true;
+        this.alertSeconds = 3;
+        clearTimeout(this.alertTimer);
+        clearInterval(this.alertInterval);
+        this.alertInterval = setInterval(() => {
+          if (this.alertSeconds > 1) {
+            this.alertSeconds--;
+          }
+        }, 1000);
+        this.alertTimer = setTimeout(() => {
+          this.showAlert = false;
+          clearInterval(this.alertInterval);
+        }, 3000);
+      } catch (error) {
+        this.showError = true;
+        this.errorMessage = error.message;
+        setTimeout(() => (this.showError = false), 2500);
+      }
     },
     onFacebookSignUp() {
       // Placeholder for Facebook sign up logic

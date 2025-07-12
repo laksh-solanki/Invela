@@ -7,15 +7,30 @@
           <span class="input-icon">
             <i class="fa fa-envelope"></i>
           </span>
-          <input v-model="email" type="email" id="email" placeholder="Email" required />
+          <input
+            v-model="email"
+            type="email"
+            id="email"
+            placeholder="Email"
+            required
+          />
         </div>
         <div class="form-group input-icon-group">
           <span class="input-icon">
             <i class="fa fa-lock"></i>
           </span>
-          <input v-model="password" :type="showPassword ? 'text' : 'password'" id="password" placeholder="Password"
-            required />
-          <span @click="togglePassword" class="toggle-password" aria-label="Toggle password visibility">
+          <input
+            v-model="password"
+            :type="showPassword ? 'text' : 'password'"
+            id="password"
+            placeholder="Password"
+            required
+          />
+          <span
+            @click="togglePassword"
+            class="toggle-password"
+            aria-label="Toggle password visibility"
+          >
             <i :class="showPassword ? 'fa fa-eye-slash' : 'fa fa-eye'"></i>
           </span>
         </div>
@@ -28,23 +43,41 @@
         <button type="submit" class="btn-primary">Login</button>
         <div class="divider"><span>or</span></div>
         <div class="social-login">
-          <button type="button" class="btn-social google" @click="onGoogleLogin">
+          <button
+            type="button"
+            class="btn-social google"
+            @click="onGoogleLogin"
+          >
             <i class="fa fa-google"></i> Sign in with Google
           </button>
-          <button type="button" class="btn-social facebook" @click="onFacebookLogin">
+          <button
+            type="button"
+            class="btn-social facebook"
+            @click="onFacebookLogin"
+          >
             <i class="fa fa-facebook"></i> Sign in with Facebook
           </button>
         </div>
       </form>
       <!-- Bootstrap Alert -->
       <transition name="fade">
-        <div v-if="showAlert" class="alert alert-success custom-alert" role="alert">
-          Logged in as <strong>{{ email }}</strong>! <span class="timer">{{ alertSeconds }}</span>s
+        <div
+          v-if="showAlert"
+          class="alert alert-success custom-alert"
+          role="alert"
+        >
+          Logged in as <strong>{{ email }}</strong
+          >! <span class="timer">{{ alertSeconds }}</span
+          >s
         </div>
       </transition>
       <transition name="fade">
-        <div v-if="showError" class="alert alert-danger custom-alert" role="alert"
-          style="background: #f8d7da; color: #842029">
+        <div
+          v-if="showError"
+          class="alert alert-danger custom-alert"
+          role="alert"
+          style="background: #f8d7da; color: #842029"
+        >
           {{ errorMessage }}
         </div>
       </transition>
@@ -53,6 +86,8 @@
 </template>
 
 <script>
+import { signInWithPopup, auth, provider } from "../firebase";
+
 export default {
   name: "Login",
   data() {
@@ -94,9 +129,29 @@ export default {
         clearInterval(this.alertInterval);
       }, 3000);
     },
-    onGoogleLogin() {
-      // Placeholder for Google login logic
-      alert("Google login clicked!");
+    async onGoogleLogin() {
+      try {
+        const result = await signInWithPopup(auth, provider);
+        const user = result.user;
+        this.email = user.email;
+        this.showAlert = true;
+        this.alertSeconds = 3;
+        clearTimeout(this.alertTimer);
+        clearInterval(this.alertInterval);
+        this.alertInterval = setInterval(() => {
+          if (this.alertSeconds > 1) {
+            this.alertSeconds--;
+          }
+        }, 1000);
+        this.alertTimer = setTimeout(() => {
+          this.showAlert = false;
+          clearInterval(this.alertInterval);
+        }, 3000);
+      } catch (error) {
+        this.showError = true;
+        this.errorMessage = error.message;
+        setTimeout(() => (this.showError = false), 2500);
+      }
     },
     onFacebookLogin() {
       // Placeholder for Facebook login logic
