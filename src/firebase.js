@@ -5,7 +5,7 @@ const firebaseConfig = {
   apiKey: "AIzaSyAcm_h-QcISTlP0R8LGC0gL-flwyeTfeJs",
   authDomain: "invela-fc9e9.firebaseapp.com",
   projectId: "invela-fc9e9",
-  storageBucket: "invela-fc9e9.firebasestorage.app",
+  storageBucket: "invela-fc9e9.appspot.com", // <-- fix here
   messagingSenderId: "898353304233",
   appId: "1:898353304233:web:656effe6d9b89f94d80fb8",
   measurementId: "G-STZ2DCSXB9",
