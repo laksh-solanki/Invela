@@ -148,6 +148,7 @@ export default {
           clearInterval(this.alertInterval);
         }, 3000);
       } catch (error) {
+        console.error("Google Login Error:", error); // Add this line
         this.showError = true;
         this.errorMessage = error.message;
         setTimeout(() => (this.showError = false), 2500);
