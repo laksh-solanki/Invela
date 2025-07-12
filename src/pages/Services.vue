@@ -414,17 +414,20 @@ const chooseFeatures = [
     max-width: 260px;
   }
   .services-slider-custom {
-    gap: 1rem;
+    gap: 1.3rem;
   }
   .service-card-custom {
-    min-width: 180px;
+    min-width: 350px;
     max-width: 220px;
-    padding: 0.5rem;
+    padding: 3.8rem;
   }
   .services-grid-glass {
     gap: 1.2rem;
   }
   .why-choose {
+    text-align: center  ;
+    margin-left: 1rem;
+    margin-right: 1rem;
     padding: 1.2rem 0.7rem 1rem 0.7rem;
   }
   .choose-features {

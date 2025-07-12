@@ -2,7 +2,7 @@
   <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
     <div class="container">
       <div class="navbar-brand logo animate__animated animate__backInLeft">
-        <i class="fa-brands fa-slack"></i>
+        <i class="fa-brands fa-slack" style="color: #B197FC;"></i>
         <router-link to="/" class="main-logo">Invela</router-link>
       </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
@@ -225,17 +225,11 @@ onBeforeUnmount(() => {
 .logo {
   font-size: 1.8rem;
   font-weight: 700;
-  color: var(--primary);
   display: flex;
   align-items: center;
   gap: 10px;
 
-  & i {
-    color: var(--accent);
-  }
-
   & .main-logo {
-    color: var(--primary);
     text-decoration: none;
   }
 }

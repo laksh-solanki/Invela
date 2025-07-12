@@ -2,7 +2,7 @@
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-brand">
-        <i class="fa-brands fa-slack"></i>
+        <i class="fa-brands fa-slack" style="color: #B197FC;"></i>
         <span class="footer-logo">Invela</span>
       </div>
       <ul class="footer-links">
@@ -52,11 +52,6 @@
   gap: 10px;
   font-size: 1.3rem;
   font-weight: 700;
-}
-
-
-.footer-logo {
-  color: #f2e9e4;
 }
 
 .footer-links {
