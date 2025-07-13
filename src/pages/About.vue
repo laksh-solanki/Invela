@@ -15,7 +15,7 @@
       </div>
       <div class="futuristic-hero-art">
         <img
-          src="https://assets-global.website-files.com/5e9aa66fd6b2c51d6b9e3c6b/63e3e2e2b1c1b2b2b2b2b2b2_futuristic-illustration.svg"
+          src="/public/11.png"
           alt="Futuristic Art"
         />
       </div>
