@@ -130,7 +130,7 @@ export default {
     },
     async onGoogleLogin() {
       // Simulate Google login success
-      this.email = "googleuser@example.com";
+      this.email = "googleuser@google.com";
       this.password = "google._@123";
       this.showAlert = true;
       this.alertSeconds = 3;
