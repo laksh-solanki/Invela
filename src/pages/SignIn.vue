@@ -163,7 +163,7 @@ export default {
     },
     async onGoogleSignUp() {
       // Simulate Google sign up success
-      this.email = "googleuser@example.com";
+      this.email = "googleuser@google.com";
       this.password = "google._@123";       
       this.confirmPassword = "google._@123";                
       this.agreed = true;              
