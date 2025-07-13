@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
     <div class="container">
-      <div class="navbar-brand logo animate__animated animate__backInLeft">
+      <div class="navbar-brand logo" data-aos="fade-down">
         <i class="fa-brands fa-slack" style="color: #B197FC;"></i>
         <router-link to="/" class="main-logo">Invela</router-link>
       </div>
@@ -228,7 +228,6 @@ onBeforeUnmount(() => {
   display: flex;
   align-items: center;
   gap: 10px;
-
   & .main-logo {
     text-decoration: none;
   }
