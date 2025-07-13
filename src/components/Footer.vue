@@ -100,15 +100,15 @@
   .footer-container {
     flex-direction: column;
     gap: 1.5rem;
-    align-items: flex-start;
+    text-align: center;
   }
 
   .footer-links {
-    gap: 1rem;
+    gap: 1.8rem;
   }
 
   .footer-social {
-    gap: 0.8rem;
+    gap: 1.8rem;
   }
 }
 </style>

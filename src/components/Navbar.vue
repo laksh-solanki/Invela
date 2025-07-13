@@ -1,7 +1,7 @@
 <template>
-  <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
+  <nav class="navbar navbar-expand-lg sticky-top shadow-sm navbar-dark">
     <div class="container">
-      <div class="navbar-brand logo" data-aos="fade-down">
+      <div class="navbar-brand logo">
         <i class="fa-brands fa-slack" style="color: #B197FC;"></i>
         <router-link to="/" class="main-logo">Invela</router-link>
       </div>
@@ -12,15 +12,13 @@
       <div class="collapse navbar-collapse justify-content-center align-items-center" id="navbarNavDropdown">
         <ul class="navbar-nav w-100 ms-lg-5 justify-content-center align-items-center gap-4">
           <li class="nav-item">
-            <router-link to="/" exact-active-class="nav-link active-link" class="nav-link fw-medium">Home</router-link>
+            <router-link to="/" exact-active-class="active-link" class="nav-link fw-medium">Home</router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/Services" exact-active-class="active-link nav-link"
-              class="nav-link fw-medium">Services</router-link>
+            <router-link to="/Services" exact-active-class="active-link" class="nav-link fw-medium">Services</router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/About" exact-active-class="active-link nav-link"
-              class="nav-link fw-medium">About</router-link>
+            <router-link to="/About" exact-active-class="active-link" class="nav-link fw-medium">About</router-link>
           </li>
           <li class="nav-item dropdown" @mouseleave="closeDropdown">
             <a class="nav-link fw-medium" href="#" role="button" @click.prevent="toggleDropdown"
@@ -103,8 +101,8 @@ onBeforeUnmount(() => {
   & .navbar-nav {
     font-size: 1.13rem;
 
-    & .nav-item>.nav-link {
-      color: rgb(72, 48, 251) !important;
+    & .nav-item > .nav-link {
+      color: rgb(121, 103, 255) !important;
     }
   }
 }
@@ -218,13 +216,13 @@ onBeforeUnmount(() => {
 }
 
 .active-link {
-  color: #000000;
-  border-bottom: 2px solid #000000;
+  border-bottom: 2px solid #ffffff;
 }
 
 .logo {
   font-size: 1.8rem;
   font-weight: 700;
+  margin-left: 15px;
   display: flex;
   align-items: center;
   gap: 10px;

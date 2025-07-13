@@ -6,7 +6,8 @@
         <div class="contact-info card">
           <h2><i class="fa fa-info-circle"></i> Get in Touch</h2>
           <p>
-            We'd love to hear from you! Fill out the form or reach us directly at:
+            We'd love to hear from you! Fill out the form or reach us directly
+            at:
           </p>
           <ul>
             <li><i class="fa fa-envelope"></i> lakshsolanki848@gmail.com</li>
@@ -19,7 +20,7 @@
               width="100%"
               height="160"
               frameborder="0"
-              style="border:0; border-radius: 10px; margin-top: 1rem;"
+              style="border: 0; border-radius: 10px; margin-top: 1rem"
               src="https://maps.google.com/maps?q=123%20Main%20St&t=&z=13&ie=UTF8&iwloc=&output=embed"
               allowfullscreen
             ></iframe>
@@ -70,7 +71,8 @@
         :class="['alert', 'alert-success', 'contact-alert', alertAnimation]"
         role="alert"
       >
-        <i class="fa fa-check-circle"></i> Thank you! We'll get back to you soon.
+        <i class="fa fa-check-circle"></i> Thank you! We'll get back to you
+        soon.
       </div>
     </div>
   </div>
@@ -106,7 +108,13 @@ function submitContact() {
 
 .Contact {
   min-height: 100vh;
-  background: #161616;
+  background-color: #000000;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.218) 2px,
+    transparent 0
+  );
+  background-size: 30px 30px;
+  background-position: -5px -5px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -131,9 +139,9 @@ function submitContact() {
   justify-content: center;
 }
 .card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 24px rgba(67, 97, 238, 0.08);
+  border-radius: 30px;
+  background: #e0e0e0;
+  box-shadow: 15px 15px 30px #000000, -15px -15px 30px #000000;
   padding: 2.5rem 2rem;
   margin-bottom: 1.5rem;
   display: flex;
@@ -168,7 +176,7 @@ function submitContact() {
   margin-top: 1.2rem;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(67, 97, 238, 0.10);
+  box-shadow: 0 2px 8px rgba(67, 97, 238, 0.1);
 }
 .contact-form {
   gap: 0.5rem;
@@ -230,7 +238,7 @@ function submitContact() {
   border-radius: 12px;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.2s cubic-bezier(.4,2,.6,1);
+  transition: all 0.2s cubic-bezier(0.4, 2, 0.6, 1);
   border: none;
   font-size: 1rem;
   display: inline-flex;

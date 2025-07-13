@@ -164,9 +164,9 @@ export default {
     async onGoogleSignUp() {
       // Simulate Google sign up success
       this.email = "googleuser@google.com";
-      this.password = "google._@123";       
-      this.confirmPassword = "google._@123";                
-      this.agreed = true;              
+      this.password = "google._@123";
+      this.confirmPassword = "google._@123";
+      this.agreed = true;
       this.showAlert = true;
       this.alertSeconds = 3;
       clearTimeout(this.alertTimer);
@@ -202,16 +202,23 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #161616;
+  background-color: #000000;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.218) 2px,
+    transparent 0
+  );
+  background-size: 30px 30px;
+  background-position: -5px -5px;
 }
 .signin-container {
   width: 100%;
-  max-width: 400px;
+  max-width: 600px;
   padding: 36px 28px 32px 28px;
-  border-radius: 16px;
-  background: #fff;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  border-radius: 30px;
+  background: #e0e0e0;
+  box-shadow: 15px 15px 30px #000000, -15px -15px 30px #000000;
   position: relative;
+  margin: 0 20px 0 20px;
 }
 h2 {
   text-align: center;
