@@ -1,4 +1,4 @@
-# -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Invela -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+# --------------------------------- Invela ----------------------------------------
 
 This template should help get you started developing with Vue 3 in Vite.
 
