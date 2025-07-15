@@ -15,7 +15,7 @@
       </div>
       <div class="futuristic-hero-art">
         <img
-          src="/public/11.png"
+          src="/public/photo/11.png"
           alt="Futuristic Art"
         />
       </div>
