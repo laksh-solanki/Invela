@@ -89,12 +89,12 @@ export default {
       creativeEffect,
       certificates: [
         {
-          image: "@/public/photo/certificate-01.jpg",
+          image: "./public/photo/certificate-01.jpg",
           title: "AI Master Class",
           issuer: "AI Academy",
         },
         {
-          image: "@/public/photo/certificate-02.jpg",
+          image: "./public/photo/certificate-02.jpg",
           title: "Front End Development ",
           issuer: "FrontEnd Masters",
         },
