@@ -58,6 +58,8 @@ import "swiper/css";
 import "swiper/css/effect-creative";
 import "swiper/css/navigation"; // Import navigation styles
 import { ref } from "vue";
+import certificate01 from "/photo/certificate-01.jpg";
+import certificate02 from "/photo/certificate-02.jpg";
 
 export default {
   components: { Swiper, SwiperSlide },
@@ -89,12 +91,12 @@ export default {
       creativeEffect,
       certificates: [
         {
-          image: "/photo/certificate-01.jpg",
+          image: certificate01,
           title: "AI Master Class",
           issuer: "AI Academy",
         },
         {
-          image: "/photo/certificate-02.jpg",
+          image: certificate02,
           title: "Front End Development ",
           issuer: "FrontEnd Masters",
         },
