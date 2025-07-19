@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "postbuild": "node -e \"require('fs-extra').copySync('public/photo', 'dist/photo')\"",
+    "postbuild": "node -e \"const fs = require('fs-extra'); fs.copySync('public/photo', 'dist/photo'); fs.writeFileSync('dist/_redirects', '/* /index.html 200');\",
     "preview": "vite preview"
   },
   "dependencies": {
