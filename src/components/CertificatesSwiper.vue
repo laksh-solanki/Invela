@@ -59,10 +59,6 @@ import "swiper/css/effect-creative";
 import "swiper/css/navigation"; // Import navigation styles
 import { ref } from "vue";
 
-// Import images directly. Vite will handle the correct path during build.
-import certificate01 from "@/../public/photo/certificate-01.jpg";
-import certificate02 from "@/../public/photo/certificate-02.jpg";
-
 export default {
   components: { Swiper, SwiperSlide },
   setup() {
@@ -93,12 +89,12 @@ export default {
       creativeEffect,
       certificates: [
         {
-          image: certificate01,
+          image: "/photo/certificate-01.jpg",
           title: "AI Master Class",
           issuer: "AI Academy",
         },
         {
-          image: certificate02,
+          image: "/photo/certificate-02.jpg",
           title: "Front End Development ",
           issuer: "FrontEnd Masters",
         },

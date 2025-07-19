@@ -16,16 +16,4 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
-  build: {
-    rollupOptions: {
-      output: {
-        assetFileNames: (assetInfo) => {
-          if (assetInfo.name.includes('photo')) {
-            return `photo/[name].[ext]`;
-          }
-          return `assets/[name]-[hash].[ext]`;
-        },
-      },
-    },
-  },
 })
